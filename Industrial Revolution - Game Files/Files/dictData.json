@@ -1,0 +1,11 @@
+{
+	"c2dictionary":true,
+	"data":
+		{
+			"Name":"This is from Dictionary",
+			"Type":"Sinlge",
+			"Damage":5,
+			"FireRate":20,
+			"ReloadTime":5
+		}
+}

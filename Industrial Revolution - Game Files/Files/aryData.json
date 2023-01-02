@@ -1,0 +1,17 @@
+{
+	"c2array":true,
+	"size":[10,2,1],
+	"data":	
+	[
+		[["Farm"],["Name:Mosin-Nagant,Type:Single,Damage:2080J,FireRate:34,ReloadTime:4,ReloadBullets:5,AmmoCapacity:5,AmmoLeft:5"]],
+		[["Carpentry"],["Name:Nagant M1895,Type:Single,Damage:353.9J,FireRate:14.21,ReloadTime:2,ReloadBullets:1,AmmoCapacity:7,AmmoLeft:7"]],
+		[["Coal Mine"],["Name:Lewis Gun,Type:Multi,Damage:2738J,FireRate:600,ReloadTime:7,ReloadBullets:47,AmmoCapacity:47,AmmoLeft:47"]],
+		[["a"],[123]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]]
+	]
+}
