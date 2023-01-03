@@ -85,9 +85,12 @@
         </object-type>
         <object-type name="Bldg" sid="822002441326257">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Built" sid="605036061076086" type="boolean" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="969683289147114" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -126,8 +129,24 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Bldg_UI" sid="674728520916133">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="729141385624298" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="FgObj" plugin-id="Sprite" sid="982517406443300">
+            <members>
+                <member>Bldg</member>
+                <member>Mine</member>
+                <member>Tree</member>
+            </members>
+        </family>
+    </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
     </layout-folder>

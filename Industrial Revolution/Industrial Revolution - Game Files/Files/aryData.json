@@ -1,0 +1,17 @@
+{
+	"c2array":true,
+	"size":[10,2,1],
+	"data":	
+	[
+		[["Farm"],["Name:Farm1,Type:Gather,Cost:8"]],
+		[["Carpentry"],["Name:Mill1,Type:Cut,Cost:10"]],
+		[["Coal Mine"],["Name:Mine1,Type:Dig,Cost:5"]],
+		[["a"],[123]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]],
+		[[0],[0]]
+	]
+}
