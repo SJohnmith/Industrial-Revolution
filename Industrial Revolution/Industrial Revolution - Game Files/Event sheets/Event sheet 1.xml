@@ -16,8 +16,19 @@
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
                 </action>
+                <action id="3" name="Set at XY" sid="770453862693600" type="RsrcCnt">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Tree&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="332684537251224" type="RsrcCnt">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Coal&quot;</param>
+                </action>
             </actions>
         </event-block>
+        <comment>Player Movement</comment>
         <event-block sid="978496432380749">
             <conditions>
                 <condition id="0" name="On key pressed" sid="667643198650792" type="Keyboard">
@@ -78,6 +89,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Player Clicking</comment>
         <event-block sid="146949775101490">
             <conditions>
                 <condition id="0" name="On click" sid="745872466865777" type="Mouse">
@@ -103,6 +115,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Stage 1 - Manual Gathering Resources</comment>
         <event-block sid="493543595049197">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="858981865417285" type="MineTool">
@@ -110,6 +123,11 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="3" name="Set at XY" sid="772369940855315" type="RsrcCnt">
+                    <param id="0" name="X">RsrcCnt.IndexOf(&quot;Tree&quot;)</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">RsrcCnt.At(RsrcCnt.IndexOf(&quot;Tree&quot;), 1) + 1</param>
+                </action>
                 <action id="-7" name="Set size" sid="758282364492588" type="Tree">
                     <param id="0" name="Width">Self.Width</param>
                     <param id="1" name="Height">Self.Height + 32</param>
@@ -123,6 +141,44 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="134939135933600">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="624440664556609" type="MineTool">
+                    <param id="0" name="Object">Mine</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="652430003307924" type="RsrcCnt">
+                    <param id="0" name="X">RsrcCnt.IndexOf(&quot;Coal&quot;)</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">RsrcCnt.At(RsrcCnt.IndexOf(&quot;Coal&quot;), 1) + 1</param>
+                </action>
+                <action id="-7" name="Set size" sid="623166687282527" type="Mine">
+                    <param id="0" name="Width">Self.Width</param>
+                    <param id="1" name="Height">Self.Height + 32</param>
+                </action>
+                <action id="-16" name="Wait" sid="362512769673468" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-7" name="Set size" sid="829505968726366" type="Mine">
+                    <param id="0" name="Width">Self.Width</param>
+                    <param id="1" name="Height">Self.Height - 32</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="145136098066893">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="248453377818651" type="MineTool">
+                    <param id="0" name="Object">FgObj</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="243558360075056" type="CntMoney">
+                    <param id="0" name="Text">&quot;Wood: &quot;&amp;RsrcCnt.At(RsrcCnt.IndexOf(&quot;Tree&quot;), 1)&amp;newline&amp;&#x0D;&#x0A;&quot;Coal: &quot;&amp;RsrcCnt.At(RsrcCnt.IndexOf(&quot;Coal&quot;), 1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Stage 2 - Managing Resources Gathering</comment>
         <event-group description="" sid="938406018815271" title="Building">
             <sub-events>
                 <comment>Select a Building to Place</comment>
