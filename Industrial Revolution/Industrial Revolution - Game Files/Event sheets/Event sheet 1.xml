@@ -367,8 +367,14 @@
                         <condition id="1" name="Is overlapping another object" sid="319630402762143" type="ItemIcon">
                             <param id="0" name="Object">ItemBg</param>
                         </condition>
+                        <condition id="-4" name="Trigger once while true" sid="529080633457080" type="System" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="173854379779895" type="ItemBg">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Value">ItemIcon.AnimationName</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <comment>Check if you can buy resources</comment>
                 <event-block sid="659540225817780">
@@ -414,7 +420,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="653472541571581" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) &gt; 0</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &gt; 0</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="525905251239065" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -432,7 +438,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="534403736009568" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) &lt;= 0</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &lt;= 0</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="910437461410885" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -456,7 +462,7 @@
                         </condition>
                         <condition id="-34" name="Pick by evaluate" sid="639158357677609" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) &gt; 0</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &gt; 0</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="875013908623440" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -471,9 +477,9 @@
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) + ItemBg.Price</param>
                         </action>
                         <action id="3" name="Set at XY" sid="660374658681123" type="Rsrc">
-                            <param id="0" name="X">Rsrc.IndexOf(ItemBg.AnimationName)</param>
+                            <param id="0" name="X">Rsrc.IndexOf(ItemBg.Name)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) - 1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) - 1</param>
                         </action>
                         <action id="9" name="Set scale" sid="944351600800863" type="ItemBg">
                             <param id="0" name="Scale">1.1</param>
@@ -512,9 +518,9 @@
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) - ItemBg.Price</param>
                         </action>
                         <action id="3" name="Set at XY" sid="490442578929893" type="Rsrc">
-                            <param id="0" name="X">Rsrc.IndexOf(ItemBg.AnimationName)</param>
+                            <param id="0" name="X">Rsrc.IndexOf(ItemBg.Name)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) + 1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) + 1</param>
                         </action>
                         <action id="9" name="Set scale" sid="822983825943470" type="ItemBg">
                             <param id="0" name="Scale">1.1</param>
@@ -531,6 +537,36 @@
                 <event-block sid="840098484928226">
                     <conditions />
                     <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="773630274772132" title="Paying Workers">
+            <sub-events>
+                <event-block sid="185589129527069">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="410155503381276" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="324569547103675" type="PrgsBar">
+                            <param id="0" name="Width">Self.Width + 0.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="957885645178233">
+                    <conditions>
+                        <condition id="-5" name="Compare width" sid="605092828010890" type="PrgsBar">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Width">PrgsBarBg.Width - 8</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="844562870570166" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="357652746888487" type="PrgsBar">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
