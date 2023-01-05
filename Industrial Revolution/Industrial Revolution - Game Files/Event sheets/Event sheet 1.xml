@@ -8,6 +8,10 @@
                 <condition id="-2" name="On start of layout" sid="608303284909210" type="System" />
             </conditions>
             <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="155416251442888" type="ActnTxt">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
                 <action id="-4" name="Set position to another object" sid="775773010554805" type="MineTool">
                     <param id="0" name="Object">Player</param>
                     <param id="1" name="Image point (optional)">1</param>
@@ -16,169 +20,203 @@
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
                 </action>
-                <action id="3" name="Set at XY" sid="770453862693600" type="RsrcCnt">
+                <action id="3" name="Set at XY" sid="524005212307962" type="Rsrc">
                     <param id="0" name="X">0</param>
                     <param id="1" name="Y">0</param>
-                    <param id="2" name="Value">&quot;Tree&quot;</param>
+                    <param id="2" name="Value">&quot;Money&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="332684537251224" type="RsrcCnt">
+                <action id="3" name="Set at XY" sid="770453862693600" type="Rsrc">
                     <param id="0" name="X">1</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Wood&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="332684537251224" type="Rsrc">
+                    <param id="0" name="X">2</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Coal&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <comment>Player Movement</comment>
-        <event-block sid="978496432380749">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="667643198650792" type="Keyboard">
-                    <param id="0" name="Key">87</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="833072654963538" type="Player">
-                    <param id="0" name="Control">2</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="783336495368445">
-            <conditions>
-                <condition id="2" name="Key is down" sid="151895038712038" type="Keyboard">
-                    <param id="0" name="Key">65</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="964623437774446" type="Player">
-                    <param id="0" name="Control">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="689542945722265" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-                <action behavior="Pin" id="1" name="Unpin" sid="355616039780511" type="MineTool" />
-                <action id="-4" name="Set position to another object" sid="118372842591356" type="MineTool">
-                    <param id="0" name="Object">Player</param>
-                    <param id="1" name="Image point (optional)">1</param>
-                </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="308415697451166" type="MineTool">
-                    <param id="0" name="Pin to">Player</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="898364804096559">
-            <conditions>
-                <condition id="2" name="Key is down" sid="789281697688046" type="Keyboard">
-                    <param id="0" name="Key">68</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="912862564370164" type="Player">
-                    <param id="0" name="Control">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="257934388091115" type="Player">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Pin" id="1" name="Unpin" sid="513222667217445" type="MineTool" />
-                <action id="-4" name="Set position to another object" sid="889562271280734" type="MineTool">
-                    <param id="0" name="Object">Player</param>
-                    <param id="1" name="Image point (optional)">1</param>
-                </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="192290351901210" type="MineTool">
-                    <param id="0" name="Pin to">Player</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Player Clicking</comment>
-        <event-block sid="146949775101490">
-            <conditions>
-                <condition id="0" name="On click" sid="745872466865777" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="11" name="Set collisions enabled" sid="231724454709388" type="MineTool">
-                    <param id="0" name="Collisions">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="610596711331130" type="MineTool">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-16" name="Wait" sid="211567175110863" type="System">
-                    <param id="0" name="Seconds">0.1</param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="540621153124248" type="MineTool">
-                    <param id="0" name="Collisions">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="934291913434949" type="MineTool">
-                    <param id="0" name="Visibility">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Stage 1 - Manual Gathering Resources</comment>
-        <event-block sid="493543595049197">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="858981865417285" type="MineTool">
-                    <param id="0" name="Object">Tree</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="3" name="Set at XY" sid="772369940855315" type="RsrcCnt">
-                    <param id="0" name="X">RsrcCnt.IndexOf(&quot;Tree&quot;)</param>
-                    <param id="1" name="Y">1</param>
-                    <param id="2" name="Value">RsrcCnt.At(RsrcCnt.IndexOf(&quot;Tree&quot;), 1) + 1</param>
-                </action>
-                <action id="-7" name="Set size" sid="758282364492588" type="Tree">
-                    <param id="0" name="Width">Self.Width</param>
-                    <param id="1" name="Height">Self.Height + 32</param>
-                </action>
-                <action id="-16" name="Wait" sid="485933268645251" type="System">
-                    <param id="0" name="Seconds">0.1</param>
-                </action>
-                <action id="-7" name="Set size" sid="136823757915635" type="Tree">
-                    <param id="0" name="Width">Self.Width</param>
-                    <param id="1" name="Height">Self.Height - 32</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="134939135933600">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="624440664556609" type="MineTool">
-                    <param id="0" name="Object">Mine</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="3" name="Set at XY" sid="652430003307924" type="RsrcCnt">
-                    <param id="0" name="X">RsrcCnt.IndexOf(&quot;Coal&quot;)</param>
-                    <param id="1" name="Y">1</param>
-                    <param id="2" name="Value">RsrcCnt.At(RsrcCnt.IndexOf(&quot;Coal&quot;), 1) + 1</param>
-                </action>
-                <action id="-7" name="Set size" sid="623166687282527" type="Mine">
-                    <param id="0" name="Width">Self.Width</param>
-                    <param id="1" name="Height">Self.Height + 32</param>
-                </action>
-                <action id="-16" name="Wait" sid="362512769673468" type="System">
-                    <param id="0" name="Seconds">0.1</param>
-                </action>
-                <action id="-7" name="Set size" sid="829505968726366" type="Mine">
-                    <param id="0" name="Width">Self.Width</param>
-                    <param id="1" name="Height">Self.Height - 32</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="145136098066893">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="248453377818651" type="MineTool">
-                    <param id="0" name="Object">FgObj</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="243558360075056" type="CntMoney">
-                    <param id="0" name="Text">&quot;Wood: &quot;&amp;RsrcCnt.At(RsrcCnt.IndexOf(&quot;Tree&quot;), 1)&amp;newline&amp;&#x0D;&#x0A;&quot;Coal: &quot;&amp;RsrcCnt.At(RsrcCnt.IndexOf(&quot;Coal&quot;), 1)</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Stage 2 - Managing Resources Gathering</comment>
+        <event-group description="" sid="724971856589022" title="Player Controls">
+            <sub-events>
+                <comment>Player Movement</comment>
+                <event-block sid="978496432380749">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="667643198650792" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="833072654963538" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="783336495368445">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="151895038712038" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="964623437774446" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="689542945722265" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Pin" id="1" name="Unpin" sid="355616039780511" type="MineTool" />
+                        <action id="-4" name="Set position to another object" sid="118372842591356" type="MineTool">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="308415697451166" type="MineTool">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="898364804096559">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="789281697688046" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="912862564370164" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="257934388091115" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Pin" id="1" name="Unpin" sid="513222667217445" type="MineTool" />
+                        <action id="-4" name="Set position to another object" sid="889562271280734" type="MineTool">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="192290351901210" type="MineTool">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Player Clicking</comment>
+                <event-block sid="146949775101490">
+                    <conditions>
+                        <condition id="0" name="On click" sid="745872466865777" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="231724454709388" type="MineTool">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="610596711331130" type="MineTool">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="211567175110863" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="540621153124248" type="MineTool">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="934291913434949" type="MineTool">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Stage 1 - Manual Gathering Resources</comment>
+                <event-block sid="493543595049197">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="858981865417285" type="MineTool">
+                            <param id="0" name="Object">Tree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="104870232210898" type="Tree">
+                            <param id="0" name="Object">RsrcGain</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="753495737613847" type="RsrcGain">
+                            <param id="0" name="Animation">&quot;Wood&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="772369940855315" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(&quot;Wood&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1) + 1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="758282364492588" type="Tree">
+                            <param id="0" name="Width">Self.Width</param>
+                            <param id="1" name="Height">Self.Height + 32</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="485933268645251" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="136823757915635" type="Tree">
+                            <param id="0" name="Width">Self.Width</param>
+                            <param id="1" name="Height">Self.Height - 32</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="134939135933600">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="624440664556609" type="MineTool">
+                            <param id="0" name="Object">Mine</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="831738154920168" type="Mine">
+                            <param id="0" name="Object">RsrcGain</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="463506000527640" type="RsrcGain">
+                            <param id="0" name="Animation">&quot;Coal&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="652430003307924" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(&quot;Coal&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1) + 1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="623166687282527" type="Mine">
+                            <param id="0" name="Width">Self.Width</param>
+                            <param id="1" name="Height">Self.Height + 32</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="362512769673468" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="829505968726366" type="Mine">
+                            <param id="0" name="Width">Self.Width</param>
+                            <param id="1" name="Height">Self.Height - 32</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="145136098066893">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="248453377818651" type="MineTool">
+                            <param id="0" name="Object">FgObj</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Set text" sid="243558360075056" type="RsrcCnt">
+                            <param id="0" name="Text">&quot;Money: &quot;&amp;Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)&amp;newline&amp;&#x0D;&#x0A;&quot;Wood: &quot;&amp;Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1)&amp;newline&amp;&#x0D;&#x0A;&quot;Coal: &quot;&amp;Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="996115700212069" type="RsrcCnt">
+                            <param id="0" name="Text">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)&amp;&quot;  &quot;&amp;&#x0D;&#x0A;Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1)&amp;&quot;  &quot;&amp;&#x0D;&#x0A;Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Stage 2 - Managing Resources Gathering</comment>
+                <event-block sid="422444118203827">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="938406018815271" title="Building">
             <sub-events>
                 <comment>Select a Building to Place</comment>
@@ -248,10 +286,246 @@
         </event-group>
         <event-group description="" sid="594157190282980" title="Market">
             <sub-events>
-                <comment>Buy and Sell Resources</comment>
-                <event-block sid="920901973141050">
-                    <conditions />
+                <comment>Set Items Price</comment>
+                <event-block sid="466937737142830">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="463706378794645" type="ItemBg">
+                            <param id="0" name="Object">ItemPrice</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="225993991042172" type="ItemPrice">
+                            <param id="0" name="Text">ItemBg.Price</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Display that action can be taken when near building</comment>
+                <event-block sid="780049049769936">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="560299640048684" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="371586826651797" type="ActnTxt">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Close Market Window</comment>
+                <event-block sid="308330205615733">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="829904941915255" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="880619010433490" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="222930644998944" type="ActnTxt">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="872254827059093" type="BuySell">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="664629485086571" type="MarketBg">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="287138040445170" type="ItemBg">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="998130421189751" type="ItemPrice">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Open Market Window</comment>
+                <event-block sid="936713973937525">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="437026950955017" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="470620901512725" type="ActnTxt" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="449562587411432" type="BuySell">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="651244051091923" type="MarketBg">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="712272855987570" type="ItemBg">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="499355404565241" type="ItemPrice">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Check background and overlapping item</comment>
+                <event-block sid="384090971889806">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="319630402762143" type="ItemIcon">
+                            <param id="0" name="Object">ItemBg</param>
+                        </condition>
+                    </conditions>
                     <actions />
+                </event-block>
+                <comment>Check if you can buy resources</comment>
+                <event-block sid="659540225817780">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="959879892742059" type="ItemBg">
+                            <param id="0" name="Instance variable">Price</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="917826327799827" type="ItemBg">
+                            <param id="0" name="Instance variable">BuySell</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Buy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="720824983609700" type="ItemBg">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="167149542554595">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="346245519995435" type="ItemBg">
+                            <param id="0" name="Instance variable">Price</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="571012988906782" type="ItemBg">
+                            <param id="0" name="Instance variable">BuySell</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Buy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="174370081283110" type="ItemBg">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Check if you can sell resources</comment>
+                <event-block sid="304947445859512">
+                    <conditions>
+                        <condition id="-34" name="Pick by evaluate" sid="653472541571581" type="System">
+                            <param id="0" name="Object">ItemBg</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) &gt; 0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="525905251239065" type="ItemBg">
+                            <param id="0" name="Instance variable">BuySell</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Sell&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="866629390209415" type="ItemBg">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="689261760453918">
+                    <conditions>
+                        <condition id="-34" name="Pick by evaluate" sid="534403736009568" type="System">
+                            <param id="0" name="Object">ItemBg</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) &lt;= 0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="910437461410885" type="ItemBg">
+                            <param id="0" name="Instance variable">BuySell</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Sell&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="805448053293358" type="ItemBg">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Sell resources</comment>
+                <event-block sid="920901973141050">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="497525523820313" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ItemBg</param>
+                        </condition>
+                        <condition id="-34" name="Pick by evaluate" sid="639158357677609" type="System">
+                            <param id="0" name="Object">ItemBg</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) &gt; 0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="875013908623440" type="ItemBg">
+                            <param id="0" name="Instance variable">BuySell</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Sell&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="995420899918452" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(&quot;Money&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) + ItemBg.Price</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="660374658681123" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(ItemBg.AnimationName)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) - 1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="944351600800863" type="ItemBg">
+                            <param id="0" name="Scale">1.1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="885912687275593" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="162188665910793" type="ItemBg">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Buy resources</comment>
+                <event-block sid="439148909672813">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="737982096648367" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ItemBg</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="837633506332131" type="ItemBg">
+                            <param id="0" name="Instance variable">Price</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="577965469909440" type="ItemBg">
+                            <param id="0" name="Instance variable">BuySell</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Buy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="383255438422564" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(&quot;Money&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) - ItemBg.Price</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="490442578929893" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(ItemBg.AnimationName)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.AnimationName), 1) + 1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="822983825943470" type="ItemBg">
+                            <param id="0" name="Scale">1.1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="967324442397735" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="524324067669121" type="ItemBg">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <comment>Buy and Sell Technologies</comment>
                 <event-block sid="840098484928226">
