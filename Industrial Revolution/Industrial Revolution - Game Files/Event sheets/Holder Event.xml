@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Holder Event</name>
+    <events>
+        <event-block sid="470142104186809">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="231175429857276" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="986803243792973" type="ItemBg">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="117299005953676" type="ItemIcon">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="478578678382371" type="ItemBuySell">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="985320048020956" type="ItemPrice">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="635150047120023" title="UI Behaviours">
+            <sub-events>
+                <comment>Detect once which resource text object belongs to which resource sprite object (Resource Counter)</comment>
+                <event-block sid="538860690536368">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="285756479185220" type="RsrcItem">
+                            <param id="0" name="Object">RsrcCnt</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="437964992635750" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="233959695006156" type="RsrcCnt">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Value">RsrcItem.AnimationName</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Update amount of resources you have</comment>
+                <event-block sid="691134030137498">
+                    <conditions>
+                        <condition id="0" name="On function" sid="336223947973069" type="Function">
+                            <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="830033775074600">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="537857525050840" type="RsrcItem">
+                                    <param id="0" name="Object">RsrcCnt</param>
+                                </condition>
+                                <condition id="-33" name="Pick by comparison" sid="406977254995930" type="System">
+                                    <param id="0" name="Object">RsrcCnt</param>
+                                    <param id="1" name="Expression">RsrcCnt.Name</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">RsrcItem.AnimationName</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="813800258793619" type="RsrcCnt">
+                                    <param id="0" name="Text">Rsrc.At(Rsrc.IndexOf(RsrcItem.AnimationName), 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="594877086671254">
+                    <conditions>
+                        <condition id="0" name="On function" sid="363794590918188" type="Function">
+                            <param id="0" name="Name">&quot;OpenMarket&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="LiteTween" id="3" name="Set target" sid="655298518419498" type="GenBg">
+                            <param id="0" name="Target is">1</param>
+                            <param id="1" name="Relativity">0</param>
+                            <param id="2" name="Value">64</param>
+                        </action>
+                        <action behavior="LiteTween" id="10" name="Start" sid="170208422684354" type="GenBg">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="268549441375998">
+                    <conditions>
+                        <condition id="0" name="On function" sid="325777542018513" type="Function">
+                            <param id="0" name="Name">&quot;OpenFarm&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="712564653312147">
+                    <conditions>
+                        <condition id="0" name="On function" sid="534982367163117" type="Function">
+                            <param id="0" name="Name">&quot;OpenFactory&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="924499101359127">
+                    <conditions>
+                        <condition id="0" name="On function" sid="677960454582353" type="Function">
+                            <param id="0" name="Name">&quot;Close&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="LiteTween" id="3" name="Set target" sid="441197489399227" type="GenBg">
+                            <param id="0" name="Target is">1</param>
+                            <param id="1" name="Relativity">0</param>
+                            <param id="2" name="Value">-352</param>
+                        </action>
+                        <action behavior="LiteTween" id="10" name="Start" sid="760563736153475" type="GenBg">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

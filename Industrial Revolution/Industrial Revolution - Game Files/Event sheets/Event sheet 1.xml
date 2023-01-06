@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <include>Holder Event</include>
         <event-block sid="496015629957922">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="608303284909210" type="System" />
@@ -36,6 +37,35 @@
                     <param id="2" name="Value">&quot;Coal&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="474893758748624">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="555896201583345" type="System">
+                            <param id="0" name="Object">FgObj</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="944272947071677" type="FgObj">
+                            <param id="0" name="Object">FgObjBg</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="276278519409559" type="FgObj">
+                            <param id="0" name="Object">FgHP</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="360401135742872" type="FgHP">
+                            <param id="0" name="X">FgObj.ImagePointX(2) + 5</param>
+                            <param id="1" name="Y">FgObj.ImagePointY(2) + 5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="819991082211085" type="FgHP">
+                            <param id="0" name="Instance variable">const</param>
+                            <param id="1" name="Value">FgObj.Hp</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-group description="" sid="724971856589022" title="Player Controls">
             <sub-events>
@@ -135,13 +165,17 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="104870232210898" type="Tree">
-                            <param id="0" name="Object">RsrcGain</param>
+                            <param id="0" name="Object">GainRsrc</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>
                             <param id="2" name="Image point">1</param>
                         </action>
-                        <action id="4" name="Set animation" sid="753495737613847" type="RsrcGain">
+                        <action id="4" name="Set animation" sid="753495737613847" type="GainRsrc">
                             <param id="0" name="Animation">&quot;Wood&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="162816957303590" type="Tree">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                         <action id="3" name="Set at XY" sid="772369940855315" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(&quot;Wood&quot;)</param>
@@ -169,13 +203,17 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="831738154920168" type="Mine">
-                            <param id="0" name="Object">RsrcGain</param>
+                            <param id="0" name="Object">GainRsrc</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>
                             <param id="2" name="Image point">1</param>
                         </action>
-                        <action id="4" name="Set animation" sid="463506000527640" type="RsrcGain">
+                        <action id="4" name="Set animation" sid="463506000527640" type="GainRsrc">
                             <param id="0" name="Animation">&quot;Coal&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="663980472702746" type="Mine">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                         <action id="3" name="Set at XY" sid="652430003307924" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(&quot;Coal&quot;)</param>
@@ -195,6 +233,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Results of Mining</comment>
                 <event-block sid="145136098066893">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="248453377818651" type="MineTool">
@@ -202,13 +241,30 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="0" name="Set text" sid="243558360075056" type="RsrcCnt">
-                            <param id="0" name="Text">&quot;Money: &quot;&amp;Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)&amp;newline&amp;&#x0D;&#x0A;&quot;Wood: &quot;&amp;Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1)&amp;newline&amp;&#x0D;&#x0A;&quot;Coal: &quot;&amp;Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="996115700212069" type="RsrcCnt">
-                            <param id="0" name="Text">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)&amp;&quot;  &quot;&amp;&#x0D;&#x0A;Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1)&amp;&quot;  &quot;&amp;&#x0D;&#x0A;Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1)</param>
+                        <action id="0" name="Call function" sid="348478751533956" type="Function">
+                            <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="471828902928966">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="666389809903079" type="FgObj">
+                                    <param id="0" name="Object">FgHP</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="796085626933908" type="FgObj">
+                                    <param id="0" name="Object">FgObjBg</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="325852859082957" type="FgHP" />
+                                <action behavior="Fade" id="0" name="Restart fade" sid="244949634435750" type="FgObjBg" />
+                                <action id="-5" name="Set width" sid="643138697524692" type="FgHP">
+                                    <param id="0" name="Width">(FgObj.Hp/FgHP.const)*FgObjBg.Width - 10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Stage 2 - Managing Resources Gathering</comment>
                 <event-block sid="422444118203827">
@@ -217,7 +273,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="938406018815271" title="Building">
+        <event-group description="" sid="938406018815271" title="Placing and Interacting with Buildings">
             <sub-events>
                 <comment>Select a Building to Place</comment>
                 <event-block sid="886882621469965">
@@ -225,7 +281,7 @@
                         <condition id="6" name="On object clicked" sid="910841852659630" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">Bldg_UI</param>
+                            <param id="2" name="Object clicked">BldBldg</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -234,6 +290,14 @@
                             <param id="1" name="Layer">&quot;Fg&quot;</param>
                             <param id="2" name="X">Mouse.X</param>
                             <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="196444983764860" type="Bldg">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Value">BldBldg.AnimationName</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="895286284307112" type="Bldg">
+                            <param id="0" name="Animation">BldBldg.AnimationName</param>
+                            <param id="1" name="From">1</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="388530136402599" type="Bldg">
                             <param id="0" name="Opacity">50</param>
@@ -282,6 +346,248 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Display that action can be taken when near building</comment>
+                <event-block sid="780049049769936">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="560299640048684" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="614788757373694" type="Bldg">
+                            <param id="0" name="Instance variable">Built</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="371586826651797" type="ActnTxt">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="296177826682716" type="ActnTxt">
+                            <param id="0" name="Text">&quot;Press E to View &quot;&amp;Bldg.Name</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Open Window</comment>
+                <event-block sid="451682518610264">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="390772320455969" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="818431828135493" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="738373103892057" type="ActnTxt" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="491444352353797" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="563930245164060" type="Function">
+                            <param id="0" name="Name">&quot;Open&quot;&amp;Bldg.Name</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Set text" sid="840550955495701" type="ActnTxt">
+                            <param id="0" name="Text">&quot;Press E to View to Exit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Close Window</comment>
+                <event-block sid="623503576167856">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="161499684632935" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="453927541970167" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="982644503583790" type="ActnTxt" />
+                        <condition id="0" name="Compare text" sid="968172922531895" type="ActnTxt">
+                            <param id="0" name="Text to compare">&quot;Press E to View to Exit&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="236936662129292" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="358371117878234" type="Function">
+                            <param id="0" name="Name">&quot;Close&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Set text" sid="170875445133711" type="ActnTxt">
+                            <param id="0" name="Text">&quot;Press E to View &quot;&amp;Bldg.Name</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Close Window if Left the Building</comment>
+                <event-block sid="698331870294907">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="392452769107643" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="354158524685747" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="405778712547932" type="Function">
+                            <param id="0" name="Name">&quot;Close&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="900444533610669" type="ActnTxt">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" disabled="1" sid="796016765156132" title="Old Open Window">
+                    <sub-events>
+                        <comment>Open Window</comment>
+                        <event-block disabled="1" sid="936713973937525">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="437026950955017" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="470620901512725" type="ActnTxt" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="572831596138940" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="651244051091923" type="GenBg">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="449562587411432" type="ItemBuySell">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="712272855987570" type="ItemBg">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="957710999119456" type="ItemIcon">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="499355404565241" type="ItemPrice">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="446159967126533" type="ActnTxt">
+                                    <param id="0" name="Text">&quot;Press E to View to Exit&quot;</param>
+                                </action>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="259260851065606" type="GenBg">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">64</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="285871102550872" type="GenBg">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Close Window</comment>
+                        <event-block disabled="1" sid="804504378455085">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="485573645077308" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="815748547823134" type="ActnTxt" />
+                                <condition id="-2" name="Compare Y" sid="898673257670844" type="GenBg">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">64</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="341524308492443" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="672793627390704" type="GenBg">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="135048318115859" type="ItemBuySell">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="114871047222918" type="ItemBg">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="942431516165827" type="ItemPrice">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="296678145476848" type="ActnTxt">
+                                    <param id="0" name="Text">&quot;Press E to View &quot;&amp;Bldg.AnimationName</param>
+                                </action>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="741611229171767" type="GenBg">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">-352</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="800477558668635" type="GenBg">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="616851568241998">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="695055139104675" type="ItemIcon">
+                                            <param id="0" name="Object">ItemBg</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="169377679836851" type="ItemIcon">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Close Window if Left the Building</comment>
+                        <event-block disabled="1" sid="308330205615733">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="829904941915255" type="Player">
+                                    <param id="0" name="Object">Bldg</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="880619010433490" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="904738707842568" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="222930644998944" type="ActnTxt">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="664629485086571" type="GenBg">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="872254827059093" type="ItemBuySell">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="287138040445170" type="ItemBg">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="998130421189751" type="ItemPrice">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="246916331095793" type="GenBg">
+                                    <param id="0" name="Target is">1</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">-352</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="134758119871190" type="GenBg">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="480005153768075">
+                                    <conditions>
+                                        <condition disabled="1" id="1" name="Is overlapping another object" sid="780382074106995" type="ItemIcon">
+                                            <param id="0" name="Object">ItemBg</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="467951173112470" type="ItemIcon">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group description="" sid="594157190282980" title="Market">
@@ -296,68 +602,6 @@
                     <actions>
                         <action id="0" name="Set text" sid="225993991042172" type="ItemPrice">
                             <param id="0" name="Text">ItemBg.Price</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Display that action can be taken when near building</comment>
-                <event-block sid="780049049769936">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="560299640048684" type="Player">
-                            <param id="0" name="Object">Bldg</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="371586826651797" type="ActnTxt">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Close Market Window</comment>
-                <event-block sid="308330205615733">
-                    <conditions>
-                        <condition id="1" inverted="1" name="Is overlapping another object" sid="829904941915255" type="Player">
-                            <param id="0" name="Object">Bldg</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="880619010433490" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="222930644998944" type="ActnTxt">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="872254827059093" type="BuySell">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="664629485086571" type="MarketBg">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="287138040445170" type="ItemBg">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="998130421189751" type="ItemPrice">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Open Market Window</comment>
-                <event-block sid="936713973937525">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="437026950955017" type="Keyboard">
-                            <param id="0" name="Key">69</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="470620901512725" type="ActnTxt" />
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="449562587411432" type="BuySell">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="651244051091923" type="MarketBg">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="712272855987570" type="ItemBg">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="499355404565241" type="ItemPrice">
-                            <param id="0" name="Visibility">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -481,6 +725,10 @@
                             <param id="1" name="Y">1</param>
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) - 1</param>
                         </action>
+                        <action id="0" name="Call function" sid="926878005699987" type="Function">
+                            <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                         <action id="9" name="Set scale" sid="944351600800863" type="ItemBg">
                             <param id="0" name="Scale">1.1</param>
                         </action>
@@ -522,6 +770,10 @@
                             <param id="1" name="Y">1</param>
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) + 1</param>
                         </action>
+                        <action id="0" name="Call function" sid="220410621210483" type="Function">
+                            <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                         <action id="9" name="Set scale" sid="822983825943470" type="ItemBg">
                             <param id="0" name="Scale">1.1</param>
                         </action>
@@ -533,15 +785,21 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Buy and Sell Technologies</comment>
-                <event-block sid="840098484928226">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="440496302901424" title="Farm">
+            <sub-events>
+                <comment>Adding Workers</comment>
+                <event-block sid="661974790138920">
                     <conditions />
                     <actions />
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="167746783144920" title="Factory" />
         <event-group description="" sid="773630274772132" title="Paying Workers">
             <sub-events>
+                <comment>Visual Timer</comment>
                 <event-block sid="185589129527069">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="410155503381276" type="System">
