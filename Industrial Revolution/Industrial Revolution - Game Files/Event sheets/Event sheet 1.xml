@@ -139,20 +139,65 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="11" name="Set collisions enabled" sid="231724454709388" type="MineTool">
+                        <action behavior="Timer" id="0" name="Start timer" sid="795261520883870" type="MineTool">
+                            <param id="0" name="Duration">0.5</param>
+                            <param id="1" name="Type">1</param>
+                            <param id="2" name="Tag">&quot;Hit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="442017046866183">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="557149608479897" type="MineTool">
+                            <param id="0" name="Tag">&quot;Hit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="641571148403528" type="MineTool">
                             <param id="0" name="Collisions">1</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="610596711331130" type="MineTool">
+                        <action id="-15" name="Set visible" sid="892407213075573" type="MineTool">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-16" name="Wait" sid="211567175110863" type="System">
-                            <param id="0" name="Seconds">0.1</param>
+                        <action id="-16" name="Wait" sid="906913176082192" type="System">
+                            <param id="0" name="Seconds">0.01</param>
                         </action>
-                        <action id="11" name="Set collisions enabled" sid="540621153124248" type="MineTool">
+                        <action id="11" name="Set collisions enabled" sid="443345224560118" type="MineTool">
                             <param id="0" name="Collisions">0</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="934291913434949" type="MineTool">
+                        <action id="-15" name="Set visible" sid="622894339106600" type="MineTool">
                             <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="480739337810343">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Mouse button is down" sid="463571655884253" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="1" name="Stop timer" sid="853412459766545" type="MineTool">
+                                    <param id="0" name="Tag">&quot;Hit&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Select a Item to Mine</comment>
+                <event-block sid="858500754982254">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="670245674914951" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Tree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="0" name="Start timer" sid="850470186059103" type="MineTool">
+                            <param id="0" name="Duration">0.5</param>
+                            <param id="1" name="Type">1</param>
+                            <param id="2" name="Tag">&quot;Hit&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -601,7 +646,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="225993991042172" type="ItemPrice">
-                            <param id="0" name="Text">ItemBg.Price</param>
+                            <param id="0" name="Text">ItemBg.CurPrice</param>
                         </action>
                     </actions>
                 </event-block>
@@ -624,7 +669,7 @@
                 <event-block sid="659540225817780">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="959879892742059" type="ItemBg">
-                            <param id="0" name="Instance variable">Price</param>
+                            <param id="0" name="Instance variable">CurPrice</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)</param>
                         </condition>
@@ -643,7 +688,7 @@
                 <event-block sid="167149542554595">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="346245519995435" type="ItemBg">
-                            <param id="0" name="Instance variable">Price</param>
+                            <param id="0" name="Instance variable">CurPrice</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)</param>
                         </condition>
@@ -664,7 +709,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="653472541571581" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &gt; 0</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &gt;= Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="525905251239065" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -682,7 +727,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="534403736009568" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &lt;= 0</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &lt;= Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="910437461410885" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -706,7 +751,7 @@
                         </condition>
                         <condition id="-34" name="Pick by evaluate" sid="639158357677609" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &gt; 0</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &gt;= Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="875013908623440" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -718,12 +763,12 @@
                         <action id="3" name="Set at XY" sid="995420899918452" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) + ItemBg.Price</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) + ItemBg.CurPrice</param>
                         </action>
                         <action id="3" name="Set at XY" sid="660374658681123" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(ItemBg.Name)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) - 1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) - Amount</param>
                         </action>
                         <action id="0" name="Call function" sid="926878005699987" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -749,7 +794,7 @@
                             <param id="2" name="Object clicked">ItemBg</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="837633506332131" type="ItemBg">
-                            <param id="0" name="Instance variable">Price</param>
+                            <param id="0" name="Instance variable">CurPrice</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1)</param>
                         </condition>
@@ -763,12 +808,12 @@
                         <action id="3" name="Set at XY" sid="383255438422564" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) - ItemBg.Price</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) - ItemBg.CurPrice</param>
                         </action>
                         <action id="3" name="Set at XY" sid="490442578929893" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(ItemBg.Name)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) + 1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) + Amount</param>
                         </action>
                         <action id="0" name="Call function" sid="220410621210483" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>

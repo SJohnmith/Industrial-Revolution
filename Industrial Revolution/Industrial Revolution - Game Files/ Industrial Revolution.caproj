@@ -25,6 +25,7 @@
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -71,7 +72,8 @@
                     <instance-variables>
                         <instance-variable name="BuySell" sid="903025057128145" type="string" />
                         <instance-variable name="Name" sid="842168065730876" type="string" />
-                        <instance-variable name="Price" sid="474368815716627" type="number" />
+                        <instance-variable name="CurPrice" sid="474368815716627" type="number" />
+                        <instance-variable name="ConstPrice" sid="528903711736370" type="number" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Pin" sid="556199094129581">
@@ -119,6 +121,25 @@
                         </behavior-type>
                     </behaviors>
                     <texture />
+                </object-type>
+                <object-type name="Multiplier" sid="599560043891184">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="769678543364104">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Times_1" pingpong="0" repeatcount="0" repeatto="0" sid="159877226946163" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Times_10" pingpong="0" repeatcount="0" repeatto="0" sid="821211252818326" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Times_100" pingpong="0" repeatcount="0" repeatto="0" sid="925666917117255" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
                 </object-type>
             </object-folder>
             <object-folder name="Farm UI" />
@@ -264,6 +285,9 @@
                 <behaviors>
                     <behavior-type name="Pin" sid="505177360765513">
                         <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="Timer" sid="145860121479677">
+                        <behavior id="Timer" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>

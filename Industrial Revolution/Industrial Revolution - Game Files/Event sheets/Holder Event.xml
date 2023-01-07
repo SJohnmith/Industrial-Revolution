@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Holder Event</name>
     <events>
+        <variable constant="0" name="Amount" sid="997652762450138" static="0" type="number">0</variable>
         <event-block sid="470142104186809">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="231175429857276" type="System" />
@@ -24,10 +25,79 @@
                     <param id="0" name="Pin to">GenBg</param>
                     <param id="1" name="Mode">0</param>
                 </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="753273793565128" type="Multiplier">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
             </actions>
         </event-block>
         <event-group description="" sid="635150047120023" title="UI Behaviours">
             <sub-events>
+                <variable constant="0" name="Selected" sid="120453734725078" static="1" type="number">20</variable>
+                <comment>Select a multiplier to multiply the items by</comment>
+                <event-block sid="200261827358062">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="259133025142375" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Multiplier</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="736736416150270" type="Multiplier">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="892463439839002" type="System">
+                            <param id="0" name="Variable">Selected</param>
+                            <param id="1" name="Value">Multiplier.UID</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="972391016726555" type="System">
+                            <param id="0" name="Variable">Amount</param>
+                            <param id="1" name="Value">int(tokenat(Multiplier.AnimationName, 1, &quot;_&quot;))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Set items prices and update price texts</comment>
+                        <event-block sid="490979315954287">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="478014926553308" type="System">
+                                    <param id="0" name="Object">ItemBg</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="325932077713785" type="ItemBg">
+                                    <param id="0" name="Instance variable">CurPrice</param>
+                                    <param id="1" name="Value">ItemBg.ConstPrice*int(tokenat(Multiplier.AnimationName, 1, &quot;_&quot;))</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="975253282795922" type="ItemBg">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="507773870903867" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="113898989172742" type="ItemBg">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="774815434631855">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="733955182444921" type="System">
+                                    <param id="0" name="Object">Multiplier</param>
+                                </condition>
+                                <condition id="-34" name="Pick by evaluate" sid="736592910773611" type="System">
+                                    <param id="0" name="Object">Multiplier</param>
+                                    <param id="1" name="Expression">Multiplier.UID &lt;&gt; Selected</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="611006347784204" type="Multiplier">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>Detect once which resource text object belongs to which resource sprite object (Resource Counter)</comment>
                 <event-block sid="538860690536368">
                     <conditions>

@@ -83,7 +83,7 @@
                         <y>64</y>
                         <z>0</z>
                         <width>1344</width>
-                        <height>320</height>
+                        <height>352</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -100,7 +100,8 @@
                     <instance-variables>
                         <BuySell>Buy</BuySell>
                         <Name></Name>
-                        <Price>10</Price>
+                        <CurPrice>10</CurPrice>
+                        <ConstPrice>10</ConstPrice>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -109,7 +110,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>160</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -139,7 +140,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>512</x>
-                        <y>128</y>
+                        <y>96</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -169,7 +170,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>384</x>
-                        <y>128</y>
+                        <y>96</y>
                         <z>0</z>
                         <width>128</width>
                         <height>64</height>
@@ -199,7 +200,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>384</x>
-                        <y>256</y>
+                        <y>224</y>
                         <z>0</z>
                         <width>128</width>
                         <height>64</height>
@@ -220,7 +221,8 @@
                     <instance-variables>
                         <BuySell>Buy</BuySell>
                         <Name></Name>
-                        <Price>8</Price>
+                        <CurPrice>8</CurPrice>
+                        <ConstPrice>8</ConstPrice>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -229,7 +231,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>160</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -259,7 +261,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>640</x>
-                        <y>128</y>
+                        <y>96</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -280,7 +282,8 @@
                     <instance-variables>
                         <BuySell>Sell</BuySell>
                         <Name></Name>
-                        <Price>3</Price>
+                        <CurPrice>3</CurPrice>
+                        <ConstPrice>3</ConstPrice>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -289,7 +292,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -319,7 +322,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>512</x>
-                        <y>256</y>
+                        <y>224</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -340,7 +343,8 @@
                     <instance-variables>
                         <BuySell>Sell</BuySell>
                         <Name></Name>
-                        <Price>2</Price>
+                        <CurPrice>2</CurPrice>
+                        <ConstPrice>2</ConstPrice>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -349,7 +353,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -379,7 +383,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>640</x>
-                        <y>256</y>
+                        <y>224</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -400,7 +404,8 @@
                     <instance-variables>
                         <BuySell>Buy</BuySell>
                         <Name></Name>
-                        <Price>12</Price>
+                        <CurPrice>12</CurPrice>
+                        <ConstPrice>12</ConstPrice>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -409,7 +414,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>160</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -430,7 +435,8 @@
                     <instance-variables>
                         <BuySell>Sell</BuySell>
                         <Name></Name>
-                        <Price>5</Price>
+                        <CurPrice>5</CurPrice>
+                        <ConstPrice>5</ConstPrice>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -439,7 +445,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -509,8 +515,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>680</x>
-                        <y>171</y>
+                        <x>672</x>
+                        <y>128</y>
                         <z>0</z>
                         <width>44</width>
                         <height>38</height>
@@ -534,8 +540,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>548</x>
-                        <y>172</y>
+                        <x>544</x>
+                        <y>128</y>
                         <z>0</z>
                         <width>53</width>
                         <height>37</height>
@@ -559,8 +565,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>548</x>
-                        <y>300</y>
+                        <x>544</x>
+                        <y>256</y>
                         <z>0</z>
                         <width>53</width>
                         <height>37</height>
@@ -584,8 +590,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>680</x>
-                        <y>299</y>
+                        <x>672</x>
+                        <y>256</y>
                         <z>0</z>
                         <width>44</width>
                         <height>38</height>
@@ -836,6 +842,81 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Multiplier" uid="20">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Times_1</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>544</x>
+                        <y>352</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Multiplier" uid="21">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Times_10</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>672</x>
+                        <y>352</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>0.5</opacity>
+                    </world>
+                </instance>
+                <instance type="Multiplier" uid="22">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Times_100</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>800</x>
+                        <y>352</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
             </instances>
