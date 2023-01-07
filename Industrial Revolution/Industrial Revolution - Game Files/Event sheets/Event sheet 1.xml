@@ -278,7 +278,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Results of Mining</comment>
+                <comment>Results of Mining *Issues with Selecting the Proper HP Bars*</comment>
                 <event-block sid="145136098066893">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="248453377818651" type="MineTool">
