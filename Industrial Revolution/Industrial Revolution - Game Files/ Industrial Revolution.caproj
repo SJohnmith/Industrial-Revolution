@@ -191,9 +191,19 @@
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Market" pingpong="0" repeatcount="0" repeatto="0" sid="969683289147114" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0" />
-                            <image-point name="Imagepoint 2" x="-0.128" y="0" />
+                        <frame duration="1" hotspotX="0.501754" hotspotY="1" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g1429.png">
+                            <image-point name="Imagepoint 1" x="0.501754" y="0" />
+                            <image-point name="Imagepoint 2" x="-0.126316" y="0" />
+                            <collision-poly>
+                                <point x="0.207018" y="0.255411" />
+                                <point x="0.498246" y="0" />
+                                <point x="0.803509" y="0.242424" />
+                                <point x="0.947368" y="0.497835" />
+                                <point x="0.831579" y="0.792208" />
+                                <point x="0.498246" y="1" />
+                                <point x="0.168421" y="0.792208" />
+                                <point x="0.0631579" y="0.497835" />
+                            </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Factory" pingpong="0" repeatcount="0" repeatto="0" sid="866679948112399" speed="0">
@@ -223,9 +233,18 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="567237309938169" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g2024.png">
                             <image-point name="Imagepoint 1" x="0.5" y="0" />
                             <image-point name="Imagepoint 2" x="-0.25" y="0" />
+                            <collision-poly>
+                                <point x="0.5" y="0.1875" />
+                                <point x="0.875" y="0.21875" />
+                                <point x="0.950893" y="0.5" />
+                                <point x="0.959821" y="0.929688" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0401786" y="0.929688" />
+                                <point x="0.169643" y="0.5" />
+                            </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
@@ -234,9 +253,19 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="678382724714852" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0" />
-                            <image-point name="Imagepoint 2" x="-0.5" y="0" />
+                        <frame duration="1" hotspotX="0.505618" hotspotY="0.991379" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g28420.png">
+                            <image-point name="Imagepoint 1" x="0.505618" y="0.00862069" />
+                            <image-point name="Imagepoint 2" x="-0.47191" y="0.00862069" />
+                            <collision-poly>
+                                <point x="0.123596" y="0.0948276" />
+                                <point x="0.494382" y="0" />
+                                <point x="0.831461" y="0.12931" />
+                                <point x="0.842697" y="0.5" />
+                                <point x="0.550562" y="0.655172" />
+                                <point x="0.494382" y="1" />
+                                <point x="0.393258" y="0.698276" />
+                                <point x="0.292135" y="0.5" />
+                            </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
