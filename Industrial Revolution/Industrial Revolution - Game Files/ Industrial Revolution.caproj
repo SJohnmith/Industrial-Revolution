@@ -311,6 +311,9 @@
             </object-type>
             <object-type name="MineTool" sid="415824750085305">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="GatherRate" sid="801450396611795" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Pin" sid="505177360765513">
                         <behavior id="Pin" />
@@ -355,8 +358,11 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="FgObjBg" sid="208358726192229">
+            <object-type name="FgBg" sid="208358726192229">
                 <plugin id="NinePatch" />
+                <instance-variables>
+                    <instance-variable name="ID" sid="974898745587594" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Fade" sid="139270753206116">
                         <behavior id="Fade" />
@@ -367,6 +373,7 @@
             <object-type name="FgHP" sid="730212926473647">
                 <plugin id="TiledBg" />
                 <instance-variables>
+                    <instance-variable name="ID" sid="882763537663987" type="number" />
                     <instance-variable name="const" sid="684699375837141" type="number" />
                 </instance-variables>
                 <behaviors>

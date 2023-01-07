@@ -46,7 +46,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="944272947071677" type="FgObj">
-                            <param id="0" name="Object">FgObjBg</param>
+                            <param id="0" name="Object">FgBg</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>
                             <param id="2" name="Image point">2</param>
                         </action>
@@ -54,6 +54,14 @@
                             <param id="0" name="Object">FgHP</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>
                             <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="341097979201828" type="FgHP">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">FgObj.UID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="585969171527317" type="FgBg">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">FgObj.UID</param>
                         </action>
                         <action id="-3" name="Set position" sid="360401135742872" type="FgHP">
                             <param id="0" name="X">FgObj.ImagePointX(2) + 5</param>
@@ -201,7 +209,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Stage 1 - Manual Gathering Resources</comment>
+                <comment>Stage 1 - Manually Gathering Resources</comment>
                 <event-block sid="493543595049197">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="858981865417285" type="MineTool">
@@ -225,7 +233,7 @@
                         <action id="3" name="Set at XY" sid="772369940855315" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(&quot;Wood&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1) + 1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Wood&quot;), 1) + MineTool.GatherRate</param>
                         </action>
                         <action id="-7" name="Set size" sid="758282364492588" type="Tree">
                             <param id="0" name="Width">Self.Width</param>
@@ -263,7 +271,7 @@
                         <action id="3" name="Set at XY" sid="652430003307924" type="Rsrc">
                             <param id="0" name="X">Rsrc.IndexOf(&quot;Coal&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1) + 1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Coal&quot;), 1) + MineTool.GatherRate</param>
                         </action>
                         <action id="-7" name="Set size" sid="623166687282527" type="Mine">
                             <param id="0" name="Width">Self.Width</param>
@@ -292,21 +300,29 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="471828902928966">
+                        <event-block sid="254810099558120">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="666389809903079" type="FgObj">
+                                <condition id="-34" name="Pick by evaluate" sid="290528910571301" type="System">
                                     <param id="0" name="Object">FgHP</param>
-                                </condition>
-                                <condition id="1" name="Is overlapping another object" sid="796085626933908" type="FgObj">
-                                    <param id="0" name="Object">FgObjBg</param>
+                                    <param id="1" name="Expression">FgHP.ID = FgObj.UID</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Fade" id="0" name="Restart fade" sid="325852859082957" type="FgHP" />
-                                <action behavior="Fade" id="0" name="Restart fade" sid="244949634435750" type="FgObjBg" />
-                                <action id="-5" name="Set width" sid="643138697524692" type="FgHP">
-                                    <param id="0" name="Width">(FgObj.Hp/FgHP.const)*FgObjBg.Width - 10</param>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="736875472201228" type="FgHP" />
+                                <action id="-5" name="Set width" sid="104855957009811" type="FgHP">
+                                    <param id="0" name="Width">(FgObj.Hp/FgHP.const)*FgBg.Width - 10</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="850399342512809">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="873193745673300" type="System">
+                                    <param id="0" name="Object">FgBg</param>
+                                    <param id="1" name="Expression">FgBg.ID = FgObj.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="820866545286455" type="FgBg" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -727,7 +743,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="534403736009568" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &lt;= Amount</param>
+                            <param id="1" name="Expression">Rsrc.At(Rsrc.IndexOf(ItemBg.Name), 1) &lt; Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="910437461410885" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
