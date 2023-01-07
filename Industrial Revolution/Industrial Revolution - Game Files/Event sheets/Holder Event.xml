@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Holder Event</name>
     <events>
-        <variable constant="0" name="Amount" sid="997652762450138" static="0" type="number">0</variable>
+        <variable constant="0" name="Amount" sid="997652762450138" static="0" type="number">1</variable>
         <event-block sid="470142104186809">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="231175429857276" type="System" />
