@@ -46,6 +46,11 @@
                     <param id="1" name="Y">1</param>
                     <param id="2" name="Value">10</param>
                 </action>
+                <action id="3" name="Set at XY" sid="628802337104415" type="Rsrc">
+                    <param id="0" name="X">Rsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">10</param>
+                </action>
                 <action id="3" name="Set at XY" sid="770453862693600" type="Rsrc">
                     <param id="0" name="X">4</param>
                     <param id="1" name="Y">0</param>
@@ -504,6 +509,9 @@
                         <action id="0" name="Set text" sid="840550955495701" type="ActnTxt">
                             <param id="0" name="Text">&quot;Press E to View to Exit&quot;</param>
                         </action>
+                        <action id="0" name="Set text" sid="464463844374366" type="WorkerCnt">
+                            <param id="0" name="Text">Bldg.WorkersAtStation</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Close Window</comment>
@@ -796,6 +804,17 @@
                                     <param id="0" name="Object">Bldg</param>
                                     <param id="1" name="Expression">Bldg.Interacting = 1</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="588230174862028" type="Bldg">
+                                    <param id="0" name="Instance variable">WorkersAtStation</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">Bldg.MaxAmntWorkers</param>
+                                </condition>
+                                <condition id="1" name="Compare at XY" sid="333870918513117" type="Rsrc">
+                                    <param id="0" name="X">Rsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-11" name="Add to" sid="238321358048267" type="Bldg">
@@ -804,6 +823,29 @@
                                 </action>
                                 <action id="0" name="Set text" sid="899420544653251" type="WorkerCnt">
                                     <param id="0" name="Text">Bldg.WorkersAtStation</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="365529511942375" type="Rsrc">
+                                    <param id="0" name="X">Rsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;IdleWorkers&quot;), 1) - 1</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="157373812429827" type="Rsrc">
+                                    <param id="0" name="X">Rsrc.IndexOf(&quot;OccupiedWorkers&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;OccupiedWorkers&quot;),1) + 1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="760829945221065" type="Function">
+                                    <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="9" name="Set scale" sid="442606913977858" type="AddWorkers">
+                                    <param id="0" name="Scale">1.1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="643860573522680" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="743108419704493" type="AddWorkers">
+                                    <param id="0" name="Scale">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -818,6 +860,11 @@
                                     <param id="0" name="Object">Bldg</param>
                                     <param id="1" name="Expression">Bldg.Interacting = 1</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="113243301784270" type="Bldg">
+                                    <param id="0" name="Instance variable">WorkersAtStation</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-12" name="Subtract from" sid="210938911966770" type="Bldg">
@@ -827,9 +874,64 @@
                                 <action id="0" name="Set text" sid="364888914084169" type="WorkerCnt">
                                     <param id="0" name="Text">Bldg.WorkersAtStation</param>
                                 </action>
+                                <action id="3" name="Set at XY" sid="138095787139500" type="Rsrc">
+                                    <param id="0" name="X">Rsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;IdleWorkers&quot;), 1) + 1</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="899426846936107" type="Rsrc">
+                                    <param id="0" name="X">Rsrc.IndexOf(&quot;OccupiedWorkers&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;OccupiedWorkers&quot;), 1) - 1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="609620575943957" type="Function">
+                                    <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="9" name="Set scale" sid="361499736146335" type="AddWorkers">
+                                    <param id="0" name="Scale">1.1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="727860242721341" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="421196771444395" type="AddWorkers">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>Worker Producing Goods</comment>
+                <event-block sid="676858261633828">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="697930976374142" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="628399685318137" type="Bldg">
+                            <param id="0" name="Instance variable">WorkersAtStation</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">Bldg.MaxAmntWorkers</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="698522337381782" type="PrdctBar">
+                            <param id="0" name="Width">Self.Width + 0.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="143997288194491">
+                    <conditions>
+                        <condition id="-5" name="Compare width" sid="243030520077970" type="PrdctBar">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Width">PrdctBarBg.Width - 8</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="161756647225167" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="122418840142155" type="PrdctBar">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

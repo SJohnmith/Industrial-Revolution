@@ -167,6 +167,24 @@
                         </behavior-type>
                     </behaviors>
                 </object-type>
+                <object-type name="PrdctBarBg" sid="241237028308540">
+                    <plugin id="NinePatch" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="662301340055842">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+                <object-type name="PrdctBar" sid="746733202720999">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="947827900530939">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
             </object-folder>
             <object-type name="BldBldg" sid="674728520916133">
                 <plugin id="Sprite" />
@@ -241,6 +259,7 @@
                     <instance-variable name="Built" sid="605036061076086" type="boolean" />
                     <instance-variable name="Interacting" sid="641760234810852" type="boolean" />
                     <instance-variable name="WorkersAtStation" sid="985840049383325" type="number" />
+                    <instance-variable name="MaxAmntWorkers" sid="813742505792111" type="number" />
                     <instance-variable name="UpKeepCost" sid="626543383054396" type="number" />
                 </instance-variables>
                 <animation-folder>
