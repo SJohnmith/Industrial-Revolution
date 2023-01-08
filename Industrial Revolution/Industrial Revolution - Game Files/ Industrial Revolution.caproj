@@ -239,6 +239,10 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="RsrcBg" sid="180961495407662">
+                <plugin id="NinePatch" />
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="Plugins">
             <object-type name="Mouse" sid="963598462834999">
