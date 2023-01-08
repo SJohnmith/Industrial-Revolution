@@ -248,7 +248,7 @@
                         <behavior id="solid" />
                     </behavior-type>
                 </behaviors>
-                <texture />
+                <texture original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g1578.png" />
             </object-type>
             <object-type name="Mine" sid="492683623389118">
                 <plugin id="Sprite" />
