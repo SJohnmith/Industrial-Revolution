@@ -142,8 +142,50 @@
                     </animation-folder>
                 </object-type>
             </object-folder>
-            <object-folder name="Farm UI" />
-            <object-folder name="Factory UI" />
+            <object-folder name="Farm and Factory UI">
+                <object-type name="AddWorkers" sid="955562588579896">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="465503978457685">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Add" pingpong="0" repeatcount="0" repeatto="0" sid="996090834731130" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Remove" pingpong="0" repeatcount="0" repeatto="0" sid="823915474991144" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="WorkerCnt" sid="457568561224045">
+                    <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="157034812855567">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+                <object-type name="PrdctBarBg" sid="241237028308540">
+                    <plugin id="NinePatch" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="662301340055842">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+                <object-type name="PrdctBar" sid="746733202720999">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="947827900530939">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+            </object-folder>
             <object-type name="BldBldg" sid="674728520916133">
                 <plugin id="Sprite" />
                 <animation-folder>
@@ -186,8 +228,14 @@
                     <animation framecount="1" loop="0" name="Coal" pingpong="0" repeatcount="0" repeatto="0" sid="732116803791492" speed="0">
                         <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
                     </animation>
-                    <animation framecount="1" loop="0" name="Worker" pingpong="0" repeatcount="0" repeatto="0" sid="547603663087653" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="0" name="Workers" pingpong="0" repeatcount="0" repeatto="0" sid="547603663087653" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.504425" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="IdleWorkers" pingpong="0" repeatcount="0" repeatto="0" sid="561550174229619" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.504425" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="OccupiedWorkers" pingpong="0" repeatcount="0" repeatto="0" sid="600867261279186" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.504425" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -209,6 +257,10 @@
                 <instance-variables>
                     <instance-variable name="Name" sid="896429756237868" type="string" />
                     <instance-variable name="Built" sid="605036061076086" type="boolean" />
+                    <instance-variable name="Interacting" sid="641760234810852" type="boolean" />
+                    <instance-variable name="WorkersAtStation" sid="985840049383325" type="number" />
+                    <instance-variable name="MaxAmntWorkers" sid="813742505792111" type="number" />
+                    <instance-variable name="UpKeepCost" sid="626543383054396" type="number" />
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Market" pingpong="0" repeatcount="0" repeatto="0" sid="969683289147114" speed="0">

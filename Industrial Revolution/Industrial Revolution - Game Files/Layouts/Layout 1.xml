@@ -86,6 +86,10 @@
                         <Hp>10</Hp>
                         <Name>Market</Name>
                         <Built>true</Built>
+                        <Interacting>false</Interacting>
+                        <WorkersAtStation>0</WorkersAtStation>
+                        <MaxAmntWorkers>5</MaxAmntWorkers>
+                        <UpKeepCost>0</UpKeepCost>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
