@@ -103,6 +103,9 @@
                         <animation framecount="1" loop="0" name="Coal" pingpong="0" repeatcount="0" repeatto="0" sid="537254173102436" speed="0">
                             <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
                         </animation>
+                        <animation framecount="1" loop="0" name="Textiles" pingpong="0" repeatcount="0" repeatto="0" sid="431043229982379" speed="0">
+                            <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
+                        </animation>
                     </animation-folder>
                 </object-type>
                 <object-type name="ItemPrice" sid="952100111198127">
@@ -228,6 +231,9 @@
                     <animation framecount="1" loop="0" name="Coal" pingpong="0" repeatcount="0" repeatto="0" sid="732116803791492" speed="0">
                         <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
                     </animation>
+                    <animation framecount="1" loop="0" name="Textiles" pingpong="0" repeatcount="0" repeatto="0" sid="918892246264262" speed="0">
+                        <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
+                    </animation>
                     <animation framecount="1" loop="0" name="Workers" pingpong="0" repeatcount="0" repeatto="0" sid="547603663087653" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.504425" />
                     </animation>
@@ -242,6 +248,26 @@
             <object-type name="RsrcBg" sid="180961495407662">
                 <plugin id="NinePatch" />
                 <texture />
+            </object-type>
+            <object-type name="WeekNum" sid="782202527287795">
+                <plugin id="Text" />
+                <instance-variables>
+                    <instance-variable name="Num" sid="171598577058236" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="PayAmount" sid="785386162590870">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="GoodBad" sid="855425926080227">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Good" pingpong="0" repeatcount="0" repeatto="0" sid="303800064345706" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Bad" pingpong="0" repeatcount="0" repeatto="0" sid="497222218002242" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="Plugins">
@@ -265,6 +291,7 @@
                     <instance-variable name="WorkersAtStation" sid="985840049383325" type="number" />
                     <instance-variable name="MaxAmntWorkers" sid="813742505792111" type="number" />
                     <instance-variable name="UpKeepCost" sid="626543383054396" type="number" />
+                    <instance-variable name="TimeCnt" sid="753402117748902" type="number" />
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Market" pingpong="0" repeatcount="0" repeatto="0" sid="969683289147114" speed="0">
@@ -312,7 +339,22 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="567237309938169" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g2024.png">
                             <image-point name="Imagepoint 1" x="0.5" y="0" />
-                            <image-point name="Imagepoint 2" x="-0.25" y="0" />
+                            <image-point name="Imagepoint 2" x="0.183036" y="0.203125" />
+                            <collision-poly>
+                                <point x="0.5" y="0.1875" />
+                                <point x="0.875" y="0.21875" />
+                                <point x="0.950893" y="0.5" />
+                                <point x="0.959821" y="0.929688" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0401786" y="0.929688" />
+                                <point x="0.169643" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ExhaustedMine" pingpong="0" repeatcount="0" repeatto="0" sid="468370065410368" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0" />
+                            <image-point name="Imagepoint 2" x="0.183036" y="0.203125" />
                             <collision-poly>
                                 <point x="0.5" y="0.1875" />
                                 <point x="0.875" y="0.21875" />
@@ -332,16 +374,24 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="678382724714852" speed="0">
                         <frame duration="1" hotspotX="0.505618" hotspotY="0.991379" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g28420.png">
                             <image-point name="Imagepoint 1" x="0.505618" y="0.00862069" />
+                            <image-point name="Imagepoint 2" x="-0.0674157" y="0.00862069" />
+                            <collision-poly>
+                                <point x="0.674157" y="0" />
+                                <point x="0.674157" y="1" />
+                                <point x="0.258427" y="1" />
+                                <point x="0.258427" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="TreeChopped" pingpong="0" repeatcount="0" repeatto="0" sid="219786872174504" speed="0">
+                        <frame duration="1" hotspotX="0.505618" hotspotY="0.991379">
+                            <image-point name="Imagepoint 1" x="0.505618" y="0.00862069" />
                             <image-point name="Imagepoint 2" x="-0.47191" y="0.00862069" />
                             <collision-poly>
-                                <point x="0.123596" y="0.0948276" />
-                                <point x="0.494382" y="0" />
-                                <point x="0.831461" y="0.12931" />
-                                <point x="0.842697" y="0.5" />
-                                <point x="0.550562" y="0.655172" />
-                                <point x="0.494382" y="1" />
-                                <point x="0.393258" y="0.698276" />
-                                <point x="0.292135" y="0.5" />
+                                <point x="0.370787" y="0.862069" />
+                                <point x="0.58427" y="0.862069" />
+                                <point x="0.674157" y="1" />
+                                <point x="0.168539" y="0.997845" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -465,12 +515,14 @@
         </family>
     </families>
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Main Menu.xml</layout>
+        <layout>Game.xml</layout>
         <layout>Holder Layout.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Game Event.xml</event-sheet>
         <event-sheet>Holder Event.xml</event-sheet>
+        <event-sheet>Main Menu Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />

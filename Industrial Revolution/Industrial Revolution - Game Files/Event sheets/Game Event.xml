@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Event sheet 1</name>
+    <name>Game Event</name>
     <events>
         <include>Holder Event</include>
         <event-block sid="496015629957922">
@@ -25,6 +25,11 @@
                     <param id="0" name="X">0</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Money&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="115545351824705" type="Rsrc">
+                    <param id="0" name="X">Rsrc.IndexOf(&quot;Money&quot;)</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">100</param>
                 </action>
                 <action id="3" name="Set at XY" sid="962061861368185" type="Rsrc">
                     <param id="0" name="X">1</param>
@@ -60,6 +65,11 @@
                     <param id="0" name="X">5</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Coal&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="605430956047206" type="Rsrc">
+                    <param id="0" name="X">6</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;Textiles&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -97,6 +107,170 @@
                             <param id="1" name="Value">FgObj.Hp</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="693322873072235">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="609693484457076" type="System">
+                            <param id="0" name="Count">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="271956344963229" type="System">
+                            <param id="0" name="Object to create">Mine</param>
+                            <param id="1" name="Layer">Tree.LayerName</param>
+                            <param id="2" name="X">random(0, 3840)</param>
+                            <param id="3" name="Y">Mine.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="383503021080672" type="Mine">
+                            <param id="0" name="Object">FgBg</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="666215231093196" type="Mine">
+                            <param id="0" name="Object">FgHP</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="834649559656662" type="FgHP">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">Mine.UID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="364414233918068" type="FgBg">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">Mine.UID</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="811147956149077" type="FgHP">
+                            <param id="0" name="X">Mine.ImagePointX(2) + 5</param>
+                            <param id="1" name="Y">Mine.ImagePointY(2) + 5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="723716633401751" type="FgHP">
+                            <param id="0" name="Instance variable">const</param>
+                            <param id="1" name="Value">Mine.Hp</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="132655374009085">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="915148993654367" type="Mine">
+                                    <param id="0" name="Object">FgObj</param>
+                                </condition>
+                                <condition id="-17" name="Pick top/bottom" sid="266418140785553" type="Mine">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="556657253924964" type="Mine" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="682355631827255">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="941105233288859" type="FgBg">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Mine.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="720679706619069" type="FgBg" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="531316658207713">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="364418675165584" type="FgHP">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Mine.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="423771329129794" type="FgHP" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="211676407590302">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="420477415211038" type="System">
+                            <param id="0" name="Count">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="247787184639738" type="System">
+                            <param id="0" name="Object to create">Tree</param>
+                            <param id="1" name="Layer">Tree.LayerName</param>
+                            <param id="2" name="X">random(0, 3840)</param>
+                            <param id="3" name="Y">Tree.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="972973863127313" type="Tree">
+                            <param id="0" name="Object">FgBg</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="543777857828604" type="Tree">
+                            <param id="0" name="Object">FgHP</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="420847698535796" type="FgHP">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">Tree.UID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="118863395373819" type="FgBg">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">Tree.UID</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="407443175786909" type="FgHP">
+                            <param id="0" name="X">Tree.ImagePointX(2) + 5</param>
+                            <param id="1" name="Y">Tree.ImagePointY(2) + 5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="485730059060295" type="FgHP">
+                            <param id="0" name="Instance variable">const</param>
+                            <param id="1" name="Value">Tree.Hp</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="151712409792647">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="950422748315098" type="Tree">
+                                    <param id="0" name="Object">FgObj</param>
+                                </condition>
+                                <condition id="-17" name="Pick top/bottom" sid="280575196216923" type="Tree">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="166909310106545" type="Tree" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="181461854347101">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="808364908072205" type="FgBg">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Tree.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="510027038578667" type="FgBg" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="576100006965601">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="867134117338048" type="FgHP">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Tree.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="850238441087386" type="FgHP" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -235,7 +409,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Stage 1 - Manually Gathering Resources</comment>
+                <comment>Manually Gathering Resources</comment>
                 <event-block sid="493543595049197">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="858981865417285" type="MineTool">
@@ -376,10 +550,98 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Stage 2 - Managing Resources Gathering</comment>
+                <comment>Managing Resources Gathering</comment>
                 <event-block sid="422444118203827">
-                    <conditions />
-                    <actions />
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="577505404405322" type="Tree">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="11" name="Collisions enabled" sid="175373784207380" type="Tree" />
+                        <condition id="-4" name="Trigger once while true" sid="811059895387449" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="511182207460788" type="Tree">
+                            <param id="0" name="Animation">&quot;TreeChopped&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="586970106070645" type="Tree">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="334447064111002">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="682304700005648" type="FgBg">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Tree.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="717841636231559" type="FgBg" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="185380124338748">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="164011360497819" type="FgHP">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Tree.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="383995889693712" type="FgHP" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="245598119638998">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="420275883687623" type="Mine">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="11" name="Collisions enabled" sid="300797720147093" type="Mine" />
+                        <condition id="-4" name="Trigger once while true" sid="519180498007728" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="679513684433608" type="Mine">
+                            <param id="0" name="Animation">&quot;ExhaustedMine&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="244322038721002" type="Mine">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="255710931331372">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="594505541807566" type="FgBg">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Mine.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="107675486384965" type="FgBg" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="651458410979711">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="313928401028937" type="FgHP">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Mine.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="367990940174888" type="FgHP" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -419,6 +681,21 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Deselect Building to Place</comment>
+                <event-block sid="162647291551030">
+                    <conditions>
+                        <condition id="0" name="On click" sid="245833965618618" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="657058266996295" type="Bldg">
+                            <param id="0" name="Instance variable">Built</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="633732106687979" type="Bldg" />
+                    </actions>
+                </event-block>
                 <comment>Set Build Position to Mouse</comment>
                 <event-block sid="889713960242034">
                     <conditions>
@@ -455,7 +732,22 @@
                             <param id="0" name="Instance variable">Built</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="11" name="Set collisions enabled" sid="167773795705369" type="Tree">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="876222267075506">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="444652473723023" type="Bldg">
+                                    <param id="0" name="Object">Tree</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="679446078325996" type="Tree" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Display that action can be taken when near building</comment>
                 <event-block sid="780049049769936">
@@ -510,7 +802,7 @@
                             <param id="0" name="Text">&quot;Press E to View to Exit&quot;</param>
                         </action>
                         <action id="0" name="Set text" sid="464463844374366" type="WorkerCnt">
-                            <param id="0" name="Text">Bldg.WorkersAtStation</param>
+                            <param id="0" name="Text">Bldg.WorkersAtStation&amp;&quot;/&quot;&amp;Bldg.MaxAmntWorkers</param>
                         </action>
                     </actions>
                 </event-block>
@@ -543,7 +835,7 @@
                     </actions>
                 </event-block>
                 <comment>Close Window if Left the Building</comment>
-                <event-block sid="672889360657415">
+                <event-block disabled="1" sid="672889360657415">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="252760873876823" type="Player">
                             <param id="0" name="Object">Bldg</param>
@@ -560,6 +852,26 @@
                             <param id="0" name="Seconds">0.1</param>
                         </action>
                         <action id="0" name="Call function" sid="369076807215105" type="Function">
+                            <param id="0" name="Name">&quot;Close&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="140214347405462">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="277714754161172" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="335182235265614" type="Bldg">
+                            <param id="0" name="Instance variable">Interacting</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="775557246347575" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="778774305883226" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="733476935598599" type="Function">
                             <param id="0" name="Name">&quot;Close&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -822,7 +1134,7 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="899420544653251" type="WorkerCnt">
-                                    <param id="0" name="Text">Bldg.WorkersAtStation</param>
+                                    <param id="0" name="Text">Bldg.WorkersAtStation&amp;&quot;/&quot;&amp;Bldg.MaxAmntWorkers</param>
                                 </action>
                                 <action id="3" name="Set at XY" sid="365529511942375" type="Rsrc">
                                     <param id="0" name="X">Rsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
@@ -872,7 +1184,7 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="364888914084169" type="WorkerCnt">
-                                    <param id="0" name="Text">Bldg.WorkersAtStation</param>
+                                    <param id="0" name="Text">Bldg.WorkersAtStation&amp;&quot;/&quot;&amp;Bldg.MaxAmntWorkers</param>
                                 </action>
                                 <action id="3" name="Set at XY" sid="138095787139500" type="Rsrc">
                                     <param id="0" name="X">Rsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
@@ -902,28 +1214,71 @@
                     </sub-events>
                 </event-block>
                 <comment>Worker Producing Goods</comment>
-                <event-block sid="676858261633828">
+                <event-block sid="127139654364038">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="697930976374142" type="System">
+                        <condition id="-6" name="Every X seconds" sid="829449957705617" type="System">
                             <param id="0" name="Interval (seconds)">0.01</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="628399685318137" type="Bldg">
+                        <condition id="-7" name="Compare instance variable" sid="490293570000509" type="Bldg">
                             <param id="0" name="Instance variable">WorkersAtStation</param>
                             <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">Bldg.MaxAmntWorkers</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-5" name="Set width" sid="698522337381782" type="PrdctBar">
-                            <param id="0" name="Width">Self.Width + 0.1</param>
+                        <action id="-11" name="Add to" sid="459490376736233" type="Bldg">
+                            <param id="0" name="Instance variable">TimeCnt</param>
+                            <param id="1" name="Value">0.5</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="676858261633828">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="632737129624942" type="Player">
+                                    <param id="0" name="Object">Bldg</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="698522337381782" type="PrdctBar">
+                                    <param id="0" name="Width">(Bldg.TimeCnt/100)*(PrdctBarBg.Width-10)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="957399616768152">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="997477827841044" type="Bldg">
+                                    <param id="0" name="Instance variable">TimeCnt</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="476020268803431" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="440541841450795" type="Bldg">
+                                    <param id="0" name="Instance variable">TimeCnt</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="547804694567554" type="Rsrc">
+                                    <param id="0" name="X">Rsrc.IndexOf(&quot;Textiles&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Textiles&quot;), 1) + Bldg.WorkersAtStation</param>
+                                </action>
+                                <action id="0" name="Call function" sid="914903073840861" type="Function">
+                                    <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="143997288194491">
                     <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="974363941359761" type="Player">
+                            <param id="0" name="Object">Bldg</param>
+                        </condition>
                         <condition id="-5" name="Compare width" sid="243030520077970" type="PrdctBar">
                             <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Width">PrdctBarBg.Width - 8</param>
+                            <param id="1" name="Width">PrdctBarBg.Width - 10</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="161756647225167" type="System" />
                     </conditions>
@@ -946,7 +1301,7 @@
                     </conditions>
                     <actions>
                         <action id="-5" name="Set width" sid="324569547103675" type="PrgsBar">
-                            <param id="0" name="Width">Self.Width + 0.1</param>
+                            <param id="0" name="Width">Self.Width + 1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -961,6 +1316,22 @@
                     <actions>
                         <action id="-5" name="Set width" sid="357652746888487" type="PrgsBar">
                             <param id="0" name="Width">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="818442191370924" type="Rsrc">
+                            <param id="0" name="X">Rsrc.IndexOf(&quot;Money&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Rsrc.At(Rsrc.IndexOf(&quot;Money&quot;), 1) - Rsrc.At(Rsrc.IndexOf(&quot;Workers&quot;), 1)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="553217831787445" type="Function">
+                            <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-11" name="Add to" sid="229578082108553" type="WeekNum">
+                            <param id="0" name="Instance variable">Num</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="603861861195033" type="WeekNum">
+                            <param id="0" name="Text">&quot;Week &quot;&amp;WeekNum.Num</param>
                         </action>
                     </actions>
                 </event-block>
