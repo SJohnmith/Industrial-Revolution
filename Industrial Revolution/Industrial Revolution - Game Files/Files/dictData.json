@@ -2,8 +2,7 @@
 	"c2dictionary":true,
 	"data":
 		{
-			"Name":"This is from Dictionary",
-			"Type":"Sinlge",
-			"Cost":5,
+			"Name":"Farm",
+			"Wood":5
 		}
 }

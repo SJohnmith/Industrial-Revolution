@@ -58,137 +58,6 @@
     </configuration-settings>
     <object-folder>
         <object-folder name="UI Assets">
-            <object-folder name="Market UI">
-                <object-type name="ItemBuySell" sid="490863490672430">
-                    <plugin id="Text" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="965374368997040">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                </object-type>
-                <object-type name="ItemBg" sid="842487042761472">
-                    <plugin id="Sprite" />
-                    <instance-variables>
-                        <instance-variable name="BuySell" sid="903025057128145" type="string" />
-                        <instance-variable name="Name" sid="842168065730876" type="string" />
-                        <instance-variable name="CurPrice" sid="474368815716627" type="number" />
-                        <instance-variable name="ConstPrice" sid="528903711736370" type="number" />
-                    </instance-variables>
-                    <behaviors>
-                        <behavior-type name="Pin" sid="556199094129581">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Empty" pingpong="0" repeatcount="0" repeatto="0" sid="773469586248505" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="ItemIcon" sid="849214344323277">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="364172805106530">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Money" pingpong="0" repeatcount="0" repeatto="0" sid="975424131991635" speed="0">
-                            <frame duration="1" hotspotX="0.510638" hotspotY="0.510638" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Wood" pingpong="0" repeatcount="0" repeatto="0" sid="714528402834095" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Coal" pingpong="0" repeatcount="0" repeatto="0" sid="537254173102436" speed="0">
-                            <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Textiles" pingpong="0" repeatcount="0" repeatto="0" sid="431043229982379" speed="0">
-                            <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="ItemPrice" sid="952100111198127">
-                    <plugin id="Text" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="357275068823887">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                </object-type>
-                <object-type name="GenBg" sid="537906954289305">
-                    <plugin id="NinePatch" />
-                    <behaviors>
-                        <behavior-type name="LiteTween" sid="665774466772158">
-                            <behavior id="lunarray_LiteTween" />
-                        </behavior-type>
-                    </behaviors>
-                    <texture />
-                </object-type>
-                <object-type name="Multiplier" sid="599560043891184">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="769678543364104">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Times_1" pingpong="0" repeatcount="0" repeatto="0" sid="159877226946163" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Times_10" pingpong="0" repeatcount="0" repeatto="0" sid="821211252818326" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Times_100" pingpong="0" repeatcount="0" repeatto="0" sid="925666917117255" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-            </object-folder>
-            <object-folder name="Farm and Factory UI">
-                <object-type name="AddWorkers" sid="955562588579896">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="465503978457685">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Add" pingpong="0" repeatcount="0" repeatto="0" sid="996090834731130" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Remove" pingpong="0" repeatcount="0" repeatto="0" sid="823915474991144" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="WorkerCnt" sid="457568561224045">
-                    <plugin id="Text" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="157034812855567">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                </object-type>
-                <object-type name="PrdctBarBg" sid="241237028308540">
-                    <plugin id="NinePatch" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="662301340055842">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                    <texture />
-                </object-type>
-                <object-type name="PrdctBar" sid="746733202720999">
-                    <plugin id="TiledBg" />
-                    <behaviors>
-                        <behavior-type name="Pin" sid="947827900530939">
-                            <behavior id="Pin" />
-                        </behavior-type>
-                    </behaviors>
-                    <texture />
-                </object-type>
-            </object-folder>
             <object-type name="BldBldg" sid="674728520916133">
                 <plugin id="Sprite" />
                 <animation-folder>
@@ -269,6 +138,23 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="GenBg" sid="537906954289305">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="665774466772158">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="Settings" sid="652937210227239">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="704916815224787" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Plugins">
             <object-type name="Mouse" sid="963598462834999">
@@ -291,23 +177,13 @@
                     <instance-variable name="WorkersAtStation" sid="985840049383325" type="number" />
                     <instance-variable name="MaxAmntWorkers" sid="813742505792111" type="number" />
                     <instance-variable name="UpKeepCost" sid="626543383054396" type="number" />
-                    <instance-variable name="TimeCnt" sid="753402117748902" type="number" />
+                    <instance-variable name="PrdctTimeCnt" sid="753402117748902" type="number" />
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Market" pingpong="0" repeatcount="0" repeatto="0" sid="969683289147114" speed="0">
                         <frame duration="1" hotspotX="0.501754" hotspotY="1" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g1429.png">
                             <image-point name="Imagepoint 1" x="0.501754" y="0" />
                             <image-point name="Imagepoint 2" x="-0.126316" y="0" />
-                            <collision-poly>
-                                <point x="0.207018" y="0.255411" />
-                                <point x="0.498246" y="0" />
-                                <point x="0.803509" y="0.242424" />
-                                <point x="0.947368" y="0.497835" />
-                                <point x="0.831579" y="0.792208" />
-                                <point x="0.498246" y="1" />
-                                <point x="0.168421" y="0.792208" />
-                                <point x="0.0631579" y="0.497835" />
-                            </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Factory" pingpong="0" repeatcount="0" repeatto="0" sid="866679948112399" speed="0">
@@ -341,13 +217,11 @@
                             <image-point name="Imagepoint 1" x="0.5" y="0" />
                             <image-point name="Imagepoint 2" x="0.183036" y="0.203125" />
                             <collision-poly>
-                                <point x="0.5" y="0.1875" />
-                                <point x="0.875" y="0.21875" />
-                                <point x="0.950893" y="0.5" />
-                                <point x="0.959821" y="0.929688" />
-                                <point x="0.5" y="1" />
-                                <point x="0.0401786" y="0.929688" />
-                                <point x="0.169643" y="0.5" />
+                                <point x="0.565848" y="0" />
+                                <point x="0.883929" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0.102679" y="0.605469" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -356,13 +230,10 @@
                             <image-point name="Imagepoint 1" x="0.5" y="0" />
                             <image-point name="Imagepoint 2" x="0.183036" y="0.203125" />
                             <collision-poly>
-                                <point x="0.5" y="0.1875" />
-                                <point x="0.875" y="0.21875" />
-                                <point x="0.950893" y="0.5" />
-                                <point x="0.959821" y="0.929688" />
-                                <point x="0.5" y="1" />
-                                <point x="0.0401786" y="0.929688" />
-                                <point x="0.169643" y="0.5" />
+                                <point x="0" y="0.804688" />
+                                <point x="1" y="0.804688" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -491,14 +362,149 @@
             </object-type>
         </object-folder>
         <object-folder name="Data Structures">
-            <object-type global="1" name="Array" sid="828242395088234">
+            <object-type global="1" name="DataBldg" sid="828242395088234">
                 <plugin id="Arr" />
             </object-type>
-            <object-type global="1" name="Dictionary" sid="220999848634603">
+            <object-type global="1" name="DataSort" sid="220999848634603">
                 <plugin id="Dictionary" />
             </object-type>
-            <object-type global="1" name="Rsrc" sid="621316226555770">
+            <object-type global="1" name="DataRsrc" sid="621316226555770">
                 <plugin id="Arr" />
+            </object-type>
+        </object-folder>
+        <object-folder name="UI Farm and Factory">
+            <object-type name="AddWorkers" sid="955562588579896">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="465503978457685">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Add" pingpong="0" repeatcount="0" repeatto="0" sid="996090834731130" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Remove" pingpong="0" repeatcount="0" repeatto="0" sid="823915474991144" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="WorkerCnt" sid="457568561224045">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="157034812855567">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="PrdctBarBg" sid="241237028308540">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="662301340055842">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="PrdctBar" sid="746733202720999">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="947827900530939">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="PrdctProd" sid="182963710019894">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="246089512022200">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Textiles" pingpong="0" repeatcount="0" repeatto="0" sid="710384846022760" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="UI Market">
+            <object-type name="ItemBuySell" sid="490863490672430">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="965374368997040">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="ItemBg" sid="842487042761472">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BuySell" sid="903025057128145" type="string" />
+                    <instance-variable name="Name" sid="842168065730876" type="string" />
+                    <instance-variable name="CurPrice" sid="474368815716627" type="number" />
+                    <instance-variable name="ConstPrice" sid="528903711736370" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="556199094129581">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Empty" pingpong="0" repeatcount="0" repeatto="0" sid="773469586248505" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ItemIcon" sid="849214344323277">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="364172805106530">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Money" pingpong="0" repeatcount="0" repeatto="0" sid="975424131991635" speed="0">
+                        <frame duration="1" hotspotX="0.510638" hotspotY="0.510638" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Wood" pingpong="0" repeatcount="0" repeatto="0" sid="714528402834095" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Coal" pingpong="0" repeatcount="0" repeatto="0" sid="537254173102436" speed="0">
+                        <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Textiles" pingpong="0" repeatcount="0" repeatto="0" sid="431043229982379" speed="0">
+                        <frame duration="1" hotspotX="0.509434" hotspotY="0.513514" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ItemPrice" sid="952100111198127">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="357275068823887">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="Multiplier" sid="599560043891184">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="769678543364104">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Times_1" pingpong="0" repeatcount="0" repeatto="0" sid="159877226946163" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Times_10" pingpong="0" repeatcount="0" repeatto="0" sid="821211252818326" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Times_100" pingpong="0" repeatcount="0" repeatto="0" sid="925666917117255" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
     </object-folder>

@@ -3,10 +3,10 @@
 	"size":[10,2,1],
 	"data":	
 	[
-		[["Farm_1"],["Name:Farm_1,Type:Building,Cost:8"]],
-		[["Mill_1"],["Name:Mill_1,Type:Building,Cost:10"]],
-		[["Factory_1"],["Name:Factory_1,Type:Building,Cost:5"]],
-		[["a"],[123]],
+		[["Farm_1"],["Name:Farm,Wood:10"]],
+		[["Factory_1"],["Name:Factory,Wood:20"]],
+		[["Farm_2"],["Name:Farm,Wood:50"]],
+		[["Factory_2"],["Name:Factory,Wood:70"]],
 		[[0],[0]],
 		[[0],[0]],
 		[[0],[0]],

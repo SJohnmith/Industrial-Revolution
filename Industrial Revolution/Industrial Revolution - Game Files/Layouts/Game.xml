@@ -90,7 +90,7 @@
                         <WorkersAtStation>0</WorkersAtStation>
                         <MaxAmntWorkers>5</MaxAmntWorkers>
                         <UpKeepCost>0</UpKeepCost>
-                        <TimeCnt>0</TimeCnt>
+                        <PrdctTimeCnt>0</PrdctTimeCnt>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -441,15 +441,15 @@
         </layer>
     </layers>
     <nonworld-instances>
-        <instance type="Dictionary" uid="6" />
-        <instance type="Array" uid="7">
+        <instance type="DataSort" uid="6" />
+        <instance type="DataBldg" uid="7">
             <properties>
                 <width>10</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>
         </instance>
-        <instance type="Rsrc" uid="12">
+        <instance type="DataRsrc" uid="12">
             <properties>
                 <width>10</width>
                 <height>2</height>

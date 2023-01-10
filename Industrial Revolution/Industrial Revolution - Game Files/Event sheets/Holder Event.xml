@@ -45,6 +45,10 @@
                     <param id="0" name="Pin to">GenBg</param>
                     <param id="1" name="Mode">0</param>
                 </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="326591005779180" type="PrdctProd">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
                 <action id="-16" name="Wait" sid="755462839544112" type="System">
                     <param id="0" name="Seconds">0.1</param>
                 </action>
@@ -159,12 +163,13 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="813800258793619" type="RsrcCnt">
-                                    <param id="0" name="Text">Rsrc.At(Rsrc.IndexOf(RsrcItem.AnimationName), 1)</param>
+                                    <param id="0" name="Text">DataRsrc.At(DataRsrc.IndexOf(RsrcItem.AnimationName), 1)</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Function with OpenMakret, OpenFarm, and OpenFactory are name dependent on the animation name</comment>
                 <event-block sid="594877086671254">
                     <conditions>
                         <condition id="0" name="On function" sid="363794590918188" type="Function">
@@ -196,6 +201,7 @@
                         <action behavior="Pin" id="1" name="Unpin" sid="356253464801595" type="WorkerCnt" />
                         <action behavior="Pin" id="1" name="Unpin" sid="333127580930819" type="PrdctBar" />
                         <action behavior="Pin" id="1" name="Unpin" sid="858527154366051" type="PrdctBarBg" />
+                        <action behavior="Pin" id="1" name="Unpin" sid="431251109819566" type="PrdctProd" />
                         <action behavior="LiteTween" id="3" name="Set target" sid="655298518419498" type="GenBg">
                             <param id="0" name="Target is">1</param>
                             <param id="1" name="Relativity">0</param>
@@ -240,6 +246,10 @@
                             <param id="1" name="Mode">0</param>
                         </action>
                         <action behavior="Pin" id="0" name="Pin to object" sid="568339791533979" type="PrdctBarBg">
+                            <param id="0" name="Pin to">GenBg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="671913968467008" type="PrdctProd">
                             <param id="0" name="Pin to">GenBg</param>
                             <param id="1" name="Mode">0</param>
                         </action>
