@@ -10,6 +10,7 @@
     <unique-id>2f4gvdx99zgfj</unique-id>
     <saved-with-version>25500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -61,10 +62,10 @@
             <object-type name="BldBldg" sid="674728520916133">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Farm" pingpong="0" repeatcount="0" repeatto="0" sid="729141385624298" speed="0">
+                    <animation framecount="1" loop="0" name="Farm_1" pingpong="0" repeatcount="0" repeatto="0" sid="729141385624298" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="1" loop="0" name="Factory" pingpong="0" repeatcount="0" repeatto="0" sid="494481470389583" speed="0">
+                    <animation framecount="1" loop="0" name="Factory_1" pingpong="0" repeatcount="0" repeatto="0" sid="494481470389583" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -155,6 +156,9 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="WinLoseTxt" sid="660706548763025">
+                <plugin id="Text" />
+            </object-type>
         </object-folder>
         <object-folder name="Plugins">
             <object-type name="Mouse" sid="963598462834999">
@@ -166,6 +170,9 @@
             <object-type name="Function" sid="646935985436985">
                 <plugin id="Function" />
             </object-type>
+            <object-type name="AJAX" sid="786676481202046">
+                <plugin id="AJAX" />
+            </object-type>
         </object-folder>
         <object-folder name="Scene Assets">
             <object-type name="Bldg" sid="822002441326257">
@@ -176,7 +183,8 @@
                     <instance-variable name="Interacting" sid="641760234810852" type="boolean" />
                     <instance-variable name="WorkersAtStation" sid="985840049383325" type="number" />
                     <instance-variable name="MaxAmntWorkers" sid="813742505792111" type="number" />
-                    <instance-variable name="UpKeepCost" sid="626543383054396" type="number" />
+                    <instance-variable name="FuelLeft" sid="626543383054396" type="number" />
+                    <instance-variable name="PrdcItem" sid="483668429962249" type="string" />
                     <instance-variable name="PrdctTimeCnt" sid="753402117748902" type="number" />
                 </instance-variables>
                 <animation-folder>
@@ -333,6 +341,9 @@
                     <animation framecount="1" loop="0" name="Coal" pingpong="0" repeatcount="0" repeatto="0" sid="826357385460184" speed="0">
                         <frame duration="1" hotspotX="0.509434" hotspotY="1" />
                     </animation>
+                    <animation framecount="1" loop="0" name="Textiles" pingpong="0" repeatcount="0" repeatto="0" sid="840524249732080" speed="0">
+                        <frame duration="1" hotspotX="0.509434" hotspotY="1" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="FgBg" sid="208358726192229">
@@ -428,6 +439,15 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="ItemPrdctBar" sid="746906072956892">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="222613343421057">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="UI Market">
             <object-type name="ItemBuySell" sid="490863490672430">
@@ -507,6 +527,14 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-type name="BldgInstName" sid="668116028373327">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="921560176822399">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families>
         <family name="FgObj" plugin-id="Sprite" sid="982517406443300">
@@ -534,6 +562,7 @@
         <global-instance type="Keyboard" uid="1" />
         <global-instance type="Mouse" uid="2" />
         <global-instance type="Function" uid="26" />
+        <global-instance type="AJAX" uid="73" />
     </global-instances>
     <sounds-folder />
     <music-folder />

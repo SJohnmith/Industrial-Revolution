@@ -71,6 +71,10 @@
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Textiles&quot;</param>
                 </action>
+                <action id="1" name="Request project file" sid="278557364057188" type="AJAX">
+                    <param id="0" name="Tag">&quot;BldgData&quot;</param>
+                    <param id="1" name="File">bldgData.json</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="474893758748624">
@@ -273,6 +277,18 @@
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="998041502127138">
+            <conditions>
+                <condition id="0" name="On completed" sid="375833215808447" type="AJAX">
+                    <param id="0" name="Tag">&quot;BldgData&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Load" sid="813521053052985" type="DataBldg">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                </action>
+            </actions>
         </event-block>
         <event-group description="" sid="724971856589022" title="Player Controls">
             <sub-events>
@@ -659,6 +675,12 @@
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">BldBldg</param>
                         </condition>
+                        <condition disabled="1" id="1" name="Compare at XY" sid="500385982584701" type="DataRsrc">
+                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Wood&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">5</param>
+                            <param id="3" name="Value">DataBldg.At(0, 0)</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="126440516370458" type="System">
@@ -669,10 +691,10 @@
                         </action>
                         <action id="-10" name="Set value" sid="196444983764860" type="Bldg">
                             <param id="0" name="Instance variable">Name</param>
-                            <param id="1" name="Value">BldBldg.AnimationName</param>
+                            <param id="1" name="Value">tokenat(BldBldg.AnimationName, 0, &quot;_&quot;)</param>
                         </action>
                         <action id="4" name="Set animation" sid="895286284307112" type="Bldg">
-                            <param id="0" name="Animation">BldBldg.AnimationName</param>
+                            <param id="0" name="Animation">Bldg.Name</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="388530136402599" type="Bldg">
@@ -809,7 +831,7 @@
                         </action>
                         <action id="0" name="Call function" sid="563930245164060" type="Function">
                             <param id="0" name="Name">&quot;Open&quot;&amp;Bldg.Name</param>
-                            <param id="1" name="Parameter {n}"></param>
+                            <param id="1" name="Parameter {n}">Bldg.Name{###}Bldg.IID</param>
                         </action>
                         <action id="0" name="Set text" sid="840550955495701" type="ActnTxt">
                             <param id="0" name="Text">&quot;Press E to View to Exit&quot;</param>
@@ -1233,6 +1255,9 @@
                                 <action id="-5" name="Set width" sid="698522337381782" type="PrdctBar">
                                     <param id="0" name="Width">(Bldg.PrdctTimeCnt/100)*(PrdctBarBg.Width-10)</param>
                                 </action>
+                                <action id="-5" name="Set width" sid="228806020149334" type="ItemPrdctBar">
+                                    <param id="0" name="Width">(Bldg.PrdctTimeCnt/100)*PrdctProd.Width</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="321779127295141">
@@ -1241,6 +1266,9 @@
                             </conditions>
                             <actions>
                                 <action id="-5" name="Set width" sid="348490849445234" type="PrdctBar">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="615493787482846" type="ItemPrdctBar">
                                     <param id="0" name="Width">0</param>
                                 </action>
                             </actions>
@@ -1268,6 +1296,15 @@
                                     <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
+                                <action id="0" name="Spawn another object" sid="234403422824210" type="Bldg">
+                                    <param id="0" name="Object">GainRsrc</param>
+                                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="582218228921477" type="GainRsrc">
+                                    <param id="0" name="Animation">&quot;Textiles&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -1287,12 +1324,16 @@
                         <action id="-5" name="Set width" sid="122418840142155" type="PrdctBar">
                             <param id="0" name="Width">0</param>
                         </action>
+                        <action id="-5" name="Set width" sid="896228221962876" type="ItemPrdctBar">
+                            <param id="0" name="Width">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="773630274772132" title="Paying Workers">
             <sub-events>
+                <variable constant="0" name="AmntToPay" sid="465569728385133" static="1" type="number">0</variable>
                 <comment>Visual Timer</comment>
                 <event-block sid="185589129527069">
                     <conditions>
@@ -1315,13 +1356,17 @@
                         <condition id="-4" name="Trigger once while true" sid="844562870570166" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="674940592525980" type="System">
+                            <param id="0" name="Variable">AmntToPay</param>
+                            <param id="1" name="Value">2*DataRsrc.At(DataRsrc.IndexOf(&quot;Workers&quot;), 1)</param>
+                        </action>
                         <action id="-5" name="Set width" sid="357652746888487" type="PrgsBar">
                             <param id="0" name="Width">0</param>
                         </action>
                         <action id="3" name="Set at XY" sid="818442191370924" type="DataRsrc">
                             <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1) - DataRsrc.At(DataRsrc.IndexOf(&quot;Workers&quot;), 1)</param>
+                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1) - AmntToPay</param>
                         </action>
                         <action id="0" name="Call function" sid="553217831787445" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1332,7 +1377,53 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="0" name="Set text" sid="603861861195033" type="WeekNum">
-                            <param id="0" name="Text">&quot;Week &quot;&amp;WeekNum.Num</param>
+                            <param id="0" name="Text">&quot;Day &quot;&amp;WeekNum.Num</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="770823792041508" type="GoodBad">
+                            <param id="0" name="Object">GainRsrc</param>
+                            <param id="1" name="Layer">&quot;UI&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="523284612028688" type="GainRsrc">
+                            <param id="0" name="Animation">&quot;Money&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="508757920648285" type="PayAmount">
+                            <param id="0" name="Text">&quot;Pay: &quot;&amp;AmntToPay</param>
+                        </action>
+                        <action id="0" name="Call function" sid="996112121645549" type="Function">
+                            <param id="0" name="Name">&quot;Lose&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="495953561611917" title="Win and Lose the Game">
+            <sub-events>
+                <comment>No Money Left to Pay Workers</comment>
+                <event-block disabled="1" sid="843656225296889">
+                    <conditions>
+                        <condition id="0" name="On function" sid="109245063849355" type="Function">
+                            <param id="0" name="Name">&quot;Lose&quot;</param>
+                        </condition>
+                        <condition id="1" name="Compare at XY" sid="620031797708887" type="DataRsrc">
+                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">3</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="605480491051357" type="WinLoseTxt">
+                            <param id="0" name="X">672</param>
+                            <param id="1" name="Y">416</param>
+                        </action>
+                        <action id="0" name="Set text" sid="981491552561976" type="WinLoseTxt">
+                            <param id="0" name="Text">&quot;You Ran out Of Money to Pay Your Workers&quot;</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="571035161627025" type="System">
+                            <param id="0" name="Time scale">0</param>
                         </action>
                     </actions>
                 </event-block>

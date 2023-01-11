@@ -110,7 +110,7 @@
                 <instance type="BldBldg" uid="42">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Farm</initial-animation>
+                        <initial-animation>Farm_1</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -158,7 +158,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>320</x>
-                        <y>64</y>
+                        <y>96</y>
                         <z>0</z>
                         <width>1344</width>
                         <height>352</height>
@@ -188,7 +188,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -218,7 +218,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>512</x>
-                        <y>96</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -248,7 +248,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>384</x>
-                        <y>96</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>128</width>
                         <height>64</height>
@@ -278,7 +278,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>384</x>
-                        <y>224</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>128</width>
                         <height>64</height>
@@ -309,7 +309,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -339,7 +339,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>640</x>
-                        <y>96</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -370,7 +370,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -400,7 +400,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>512</x>
-                        <y>224</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -431,7 +431,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -461,7 +461,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>640</x>
-                        <y>224</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -492,7 +492,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -523,7 +523,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -571,7 +571,7 @@
                         <x>1536</x>
                         <y>896</y>
                         <z>0</z>
-                        <width>32</width>
+                        <width>2</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -594,7 +594,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>44</width>
                         <height>38</height>
@@ -619,7 +619,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>53</width>
                         <height>37</height>
@@ -644,7 +644,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>53</width>
                         <height>37</height>
@@ -669,7 +669,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>44</width>
                         <height>38</height>
@@ -683,7 +683,7 @@
                 <instance type="BldBldg" uid="69">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Factory</initial-animation>
+                        <initial-animation>Factory_1</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -936,7 +936,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>352</y>
+                        <y>384</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -961,7 +961,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>672</x>
-                        <y>352</y>
+                        <y>384</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -986,7 +986,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>352</y>
+                        <y>384</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -1011,7 +1011,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1248</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -1036,7 +1036,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1248</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -1066,7 +1066,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1216</x>
-                        <y>320</y>
+                        <y>352</y>
                         <z>0</z>
                         <width>96</width>
                         <height>64</height>
@@ -1206,7 +1206,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1344</x>
-                        <y>96</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>288</width>
                         <height>32</height>
@@ -1228,7 +1228,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1349</x>
-                        <y>101</y>
+                        <y>133</y>
                         <z>0</z>
                         <width>2</width>
                         <height>22</height>
@@ -1241,7 +1241,7 @@
                 </instance>
                 <instance type="WeekNum" uid="35">
                     <properties>
-                        <text>Week 0</text>
+                        <text>Day 0</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-37.3333,400,0</font>
                         <color>0,0,0</color>
@@ -1387,7 +1387,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>128</y>
+                        <y>160</y>
                         <z>0</z>
                         <width>53</width>
                         <height>37</height>
@@ -1412,7 +1412,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>800</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>53</width>
                         <height>37</height>
@@ -1442,7 +1442,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>768</x>
-                        <y>96</y>
+                        <y>128</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -1472,7 +1472,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>768</x>
-                        <y>224</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -1519,13 +1519,93 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1376</x>
-                        <y>256</y>
+                        <y>288</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ItemPrdctBar" uid="71">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1344</x>
+                        <y>256</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="WinLoseTxt" uid="72">
+                    <properties>
+                        <text>You Win or Lose</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-64,900,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>-256</y>
+                        <z>0</z>
+                        <width>704</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BldgInstName" uid="74">
+                    <properties>
+                        <text>Factory 1</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-32,900,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>960</x>
+                        <y>32</y>
+                        <z>0</z>
+                        <width>224</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

@@ -9,6 +9,10 @@
                 <condition id="-2" name="On start of layout" sid="231175429857276" type="System" />
             </conditions>
             <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="919619989685617" type="BldgInstName">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
                 <action behavior="Pin" id="0" name="Pin to object" sid="986803243792973" type="ItemBg">
                     <param id="0" name="Pin to">GenBg</param>
                     <param id="1" name="Mode">0</param>
@@ -46,6 +50,10 @@
                     <param id="1" name="Mode">0</param>
                 </action>
                 <action behavior="Pin" id="0" name="Pin to object" sid="326591005779180" type="PrdctProd">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="635254323178489" type="ItemPrdctBar">
                     <param id="0" name="Pin to">GenBg</param>
                     <param id="1" name="Mode">0</param>
                 </action>
@@ -177,6 +185,13 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="251728774538145" type="BldgInstName">
+                            <param id="0" name="Pin to">GenBg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="505874542109832" type="BldgInstName">
+                            <param id="0" name="Text">Function.Param(0)&amp;&quot; &quot;&amp;Function.Param(1)</param>
+                        </action>
                         <action behavior="Pin" id="0" name="Pin to object" sid="370748105840465" type="ItemBg">
                             <param id="0" name="Pin to">GenBg</param>
                             <param id="1" name="Mode">0</param>
@@ -202,6 +217,7 @@
                         <action behavior="Pin" id="1" name="Unpin" sid="333127580930819" type="PrdctBar" />
                         <action behavior="Pin" id="1" name="Unpin" sid="858527154366051" type="PrdctBarBg" />
                         <action behavior="Pin" id="1" name="Unpin" sid="431251109819566" type="PrdctProd" />
+                        <action behavior="Pin" id="1" name="Unpin" sid="774306432771932" type="ItemPrdctBar" />
                         <action behavior="LiteTween" id="3" name="Set target" sid="655298518419498" type="GenBg">
                             <param id="0" name="Target is">1</param>
                             <param id="1" name="Relativity">0</param>
@@ -228,6 +244,13 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="870094369983129" type="BldgInstName">
+                            <param id="0" name="Pin to">GenBg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="767971087296306" type="BldgInstName">
+                            <param id="0" name="Text">Function.Param(0)&amp;&quot; &quot;&amp;Function.Param(1)</param>
+                        </action>
                         <action behavior="Pin" id="1" name="Unpin" sid="613130190727213" type="ItemBg" />
                         <action behavior="Pin" id="1" name="Unpin" sid="949172487850692" type="ItemIcon" />
                         <action behavior="Pin" id="1" name="Unpin" sid="116852225996403" type="ItemBuySell" />
@@ -250,6 +273,10 @@
                             <param id="1" name="Mode">0</param>
                         </action>
                         <action behavior="Pin" id="0" name="Pin to object" sid="671913968467008" type="PrdctProd">
+                            <param id="0" name="Pin to">GenBg</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="115243660764757" type="ItemPrdctBar">
                             <param id="0" name="Pin to">GenBg</param>
                             <param id="1" name="Mode">0</param>
                         </action>
