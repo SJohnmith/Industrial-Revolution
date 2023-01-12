@@ -9,6 +9,10 @@
                 <condition id="-2" name="On start of layout" sid="231175429857276" type="System" />
             </conditions>
             <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="261993381256221" type="GenTitleBg">
+                    <param id="0" name="Pin to">GenBg</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
                 <action behavior="Pin" id="0" name="Pin to object" sid="919619989685617" type="BldgInstName">
                     <param id="0" name="Pin to">GenBg</param>
                     <param id="1" name="Mode">0</param>
@@ -221,7 +225,7 @@
                         <action behavior="LiteTween" id="3" name="Set target" sid="655298518419498" type="GenBg">
                             <param id="0" name="Target is">1</param>
                             <param id="1" name="Relativity">0</param>
-                            <param id="2" name="Value">64</param>
+                            <param id="2" name="Value">96</param>
                         </action>
                         <action behavior="LiteTween" id="10" name="Start" sid="170208422684354" type="GenBg">
                             <param id="0" name="Start Mode">0</param>
@@ -283,7 +287,7 @@
                         <action behavior="LiteTween" id="3" name="Set target" sid="903898471556197" type="GenBg">
                             <param id="0" name="Target is">1</param>
                             <param id="1" name="Relativity">0</param>
-                            <param id="2" name="Value">64</param>
+                            <param id="2" name="Value">96</param>
                         </action>
                         <action behavior="LiteTween" id="10" name="Start" sid="888072065207448" type="GenBg">
                             <param id="0" name="Start Mode">0</param>

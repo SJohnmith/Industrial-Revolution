@@ -683,6 +683,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="443205621222466" type="Function">
+                            <param id="0" name="Name">&quot;Instatiate&quot;</param>
+                            <param id="1" name="Parameter {n}">BldBldg.AnimationName</param>
+                        </action>
                         <action id="-3" name="Create object" sid="126440516370458" type="System">
                             <param id="0" name="Object to create">Bldg</param>
                             <param id="1" name="Layer">&quot;Fg&quot;</param>
@@ -1429,5 +1433,76 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="652914481316078">
+            <conditions>
+                <condition id="0" name="On function" sid="906231924500790" type="Function">
+                    <param id="0" name="Name">&quot;Instatiate&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Clear" sid="453538864812446" type="DataSort" />
+            </actions>
+            <sub-events>
+                <event-block sid="721030684976713">
+                    <conditions>
+                        <condition id="-10" name="For" sid="580947920717665" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">tokencount(DataBldg.At(DataBldg.IndexOf(Function.Param(0)), 1), &quot;,&quot;) - 1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="880020087014859" type="DataSort">
+                            <param id="0" name="Key">tokenat(tokenat(DataBldg.At(DataBldg.IndexOf(Function.Param(0)), 1), loopindex, &quot;,&quot;), 0, &quot;:&quot;)</param>
+                            <param id="1" name="Value">tokenat(tokenat(DataBldg.At(DataBldg.IndexOf(Function.Param(0)), 1), loopindex, &quot;,&quot;), 1, &quot;:&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="257818221361248">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="586384945583947" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="370763542988861">
+                    <conditions>
+                        <condition id="-10" name="For" sid="351658708859321" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">DataBldg.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="865103295104834" type="Function">
+                            <param id="0" name="Name">&quot;Instatiate&quot;</param>
+                            <param id="1" name="Parameter {n}">DataBldg.At(loopindex, 0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="549660107786370">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="990986108276513" type="System">
+                                    <param id="0" name="Object">BldBldg</param>
+                                    <param id="1" name="Expression">BldBldg.AnimationName = DataBldg.At(loopindex, 0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="605224221951837" type="BldBldg">
+                                    <param id="0" name="Instance variable">WoodCost</param>
+                                    <param id="1" name="Value">int(DataSort.Get(DataBldg.At(loopindex, 0)))</param>
+                                </action>
+                                <action id="0" name="Set text" sid="454377590903480" type="Debug">
+                                    <param id="0" name="Text">DataBldg.At(0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

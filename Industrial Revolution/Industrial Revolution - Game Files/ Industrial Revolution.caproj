@@ -61,6 +61,9 @@
         <object-folder name="UI Assets">
             <object-type name="BldBldg" sid="674728520916133">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="WoodCost" sid="832864372530243" type="number" />
+                </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Farm_1" pingpong="0" repeatcount="0" repeatto="0" sid="729141385624298" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -158,6 +161,15 @@
             </object-type>
             <object-type name="WinLoseTxt" sid="660706548763025">
                 <plugin id="Text" />
+            </object-type>
+            <object-type name="GenTitleBg" sid="993681069158557">
+                <plugin id="NinePatch" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="323189058205853">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
             </object-type>
         </object-folder>
         <object-folder name="Plugins">
@@ -534,6 +546,9 @@
                     <behavior id="Pin" />
                 </behavior-type>
             </behaviors>
+        </object-type>
+        <object-type name="Debug" sid="601549305000413">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families>
