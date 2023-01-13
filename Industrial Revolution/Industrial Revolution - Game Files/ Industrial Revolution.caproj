@@ -171,6 +171,14 @@
                 </behaviors>
                 <texture />
             </object-type>
+            <object-type name="BldgInstName" sid="668116028373327">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="921560176822399">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
         </object-folder>
         <object-folder name="Plugins">
             <object-type name="Mouse" sid="963598462834999">
@@ -539,14 +547,6 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="BldgInstName" sid="668116028373327">
-            <plugin id="Text" />
-            <behaviors>
-                <behavior-type name="Pin" sid="921560176822399">
-                    <behavior id="Pin" />
-                </behavior-type>
-            </behaviors>
-        </object-type>
         <object-type name="Debug" sid="601549305000413">
             <plugin id="Text" />
         </object-type>

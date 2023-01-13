@@ -421,7 +421,7 @@
                 </instance>
                 <instance type="Debug" uid="76">
                     <properties>
-                        <text>Text</text>
+                        <text>Debug</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
