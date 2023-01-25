@@ -21,52 +21,52 @@
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
                 </action>
-                <action id="3" name="Set at XY" sid="524005212307962" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="524005212307962" type="RsrcAmnt">
                     <param id="0" name="X">0</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Money&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="115545351824705" type="DataRsrc">
-                    <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
+                <action id="3" name="Set at XY" sid="115545351824705" type="RsrcAmnt">
+                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Money&quot;)</param>
                     <param id="1" name="Y">1</param>
                     <param id="2" name="Value">100</param>
                 </action>
-                <action id="3" name="Set at XY" sid="962061861368185" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="962061861368185" type="RsrcAmnt">
                     <param id="0" name="X">1</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Workers&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="516856708182830" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="516856708182830" type="RsrcAmnt">
                     <param id="0" name="X">2</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;IdleWorkers&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="194541933708757" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="194541933708757" type="RsrcAmnt">
                     <param id="0" name="X">3</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;OccupiedWorkers&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="909879282629123" type="DataRsrc">
-                    <param id="0" name="X">DataRsrc.IndexOf(&quot;Workers&quot;)</param>
+                <action id="3" name="Set at XY" sid="909879282629123" type="RsrcAmnt">
+                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Workers&quot;)</param>
                     <param id="1" name="Y">1</param>
                     <param id="2" name="Value">10</param>
                 </action>
-                <action id="3" name="Set at XY" sid="628802337104415" type="DataRsrc">
-                    <param id="0" name="X">DataRsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                <action id="3" name="Set at XY" sid="628802337104415" type="RsrcAmnt">
+                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;IdleWorkers&quot;)</param>
                     <param id="1" name="Y">1</param>
                     <param id="2" name="Value">10</param>
                 </action>
-                <action id="3" name="Set at XY" sid="770453862693600" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="770453862693600" type="RsrcAmnt">
                     <param id="0" name="X">4</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Wood&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="332684537251224" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="332684537251224" type="RsrcAmnt">
                     <param id="0" name="X">5</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Coal&quot;</param>
                 </action>
-                <action id="3" name="Set at XY" sid="605430956047206" type="DataRsrc">
+                <action id="3" name="Set at XY" sid="605430956047206" type="RsrcAmnt">
                     <param id="0" name="X">6</param>
                     <param id="1" name="Y">0</param>
                     <param id="2" name="Value">&quot;Textiles&quot;</param>
@@ -112,7 +112,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block disabled="1" sid="693322873072235">
+                <event-block sid="693322873072235">
                     <conditions>
                         <condition id="-12" name="Repeat" sid="609693484457076" type="System">
                             <param id="0" name="Count">3</param>
@@ -153,7 +153,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block disabled="1" sid="132655374009085">
+                        <event-block sid="132655374009085">
                             <conditions>
                                 <condition id="1" name="Is overlapping another object" sid="915148993654367" type="Mine">
                                     <param id="0" name="Object">FgObj</param>
@@ -166,7 +166,7 @@
                                 <action id="-9" name="Destroy" sid="556657253924964" type="Mine" />
                             </actions>
                             <sub-events>
-                                <event-block disabled="1" sid="682355631827255">
+                                <event-block sid="682355631827255">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="941105233288859" type="FgBg">
                                             <param id="0" name="Instance variable">ID</param>
@@ -178,7 +178,7 @@
                                         <action id="-9" name="Destroy" sid="720679706619069" type="FgBg" />
                                     </actions>
                                 </event-block>
-                                <event-block disabled="1" sid="531316658207713">
+                                <event-block sid="531316658207713">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="364418675165584" type="FgHP">
                                             <param id="0" name="Instance variable">ID</param>
@@ -194,7 +194,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block disabled="1" sid="211676407590302">
+                <event-block sid="211676407590302">
                     <conditions>
                         <condition id="-12" name="Repeat" sid="420477415211038" type="System">
                             <param id="0" name="Count">100</param>
@@ -235,7 +235,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block disabled="1" sid="151712409792647">
+                        <event-block sid="151712409792647">
                             <conditions>
                                 <condition id="1" name="Is overlapping another object" sid="950422748315098" type="Tree">
                                     <param id="0" name="Object">FgObj</param>
@@ -248,7 +248,7 @@
                                 <action id="-9" name="Destroy" sid="166909310106545" type="Tree" />
                             </actions>
                             <sub-events>
-                                <event-block disabled="1" sid="181461854347101">
+                                <event-block sid="181461854347101">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="808364908072205" type="FgBg">
                                             <param id="0" name="Instance variable">ID</param>
@@ -260,7 +260,7 @@
                                         <action id="-9" name="Destroy" sid="510027038578667" type="FgBg" />
                                     </actions>
                                 </event-block>
-                                <event-block disabled="1" sid="576100006965601">
+                                <event-block sid="576100006965601">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="867134117338048" type="FgHP">
                                             <param id="0" name="Instance variable">ID</param>
@@ -454,10 +454,10 @@
                             <param id="0" name="Instance variable">Hp</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="772369940855315" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Wood&quot;)</param>
+                        <action id="3" name="Set at XY" sid="772369940855315" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Wood&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Wood&quot;), 1) + MineTool.GatherRate</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Wood&quot;), 1) + MineTool.GatherRate</param>
                         </action>
                         <action id="0" name="Call function" sid="496729196087328" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -524,10 +524,10 @@
                             <param id="0" name="Instance variable">Hp</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="652430003307924" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Coal&quot;)</param>
+                        <action id="3" name="Set at XY" sid="652430003307924" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Coal&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Coal&quot;), 1) + MineTool.GatherRate</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Coal&quot;), 1) + MineTool.GatherRate</param>
                         </action>
                         <action id="0" name="Call function" sid="708146143261576" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -679,11 +679,11 @@
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">BldBldg</param>
                         </condition>
-                        <condition disabled="1" id="1" name="Compare at XY" sid="500385982584701" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Wood&quot;)</param>
+                        <condition id="1" name="Compare at XY" sid="500385982584701" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Wood&quot;)</param>
                             <param id="1" name="Y">1</param>
                             <param id="2" name="Comparison">5</param>
-                            <param id="3" name="Value">DataBldg.At(0, 0)</param>
+                            <param id="3" name="Value">BldBldg.WoodCost</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -767,6 +767,15 @@
                         </action>
                         <action id="11" name="Set collisions enabled" sid="167773795705369" type="Tree">
                             <param id="0" name="Collisions">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="166057085787676" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Wood&quot;)</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Wood&quot;), 1) - int(DataSort.Get(&quot;Wood&quot;))</param>
+                        </action>
+                        <action id="0" name="Call function" sid="187976149486754" type="Function">
+                            <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                     <sub-events>
@@ -953,7 +962,7 @@
                         <condition id="-7" name="Compare instance variable" sid="959879892742059" type="ItemBg">
                             <param id="0" name="Instance variable">CurPrice</param>
                             <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1)</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Money&quot;), 1)</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="917826327799827" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -972,7 +981,7 @@
                         <condition id="-7" name="Compare instance variable" sid="346245519995435" type="ItemBg">
                             <param id="0" name="Instance variable">CurPrice</param>
                             <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1)</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Money&quot;), 1)</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="571012988906782" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -991,7 +1000,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="653472541571581" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">DataRsrc.At(DataRsrc.IndexOf(ItemBg.Name), 1) &gt;= Amount</param>
+                            <param id="1" name="Expression">RsrcAmnt.At(RsrcAmnt.IndexOf(ItemBg.Name), 1) &gt;= Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="525905251239065" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -1009,7 +1018,7 @@
                     <conditions>
                         <condition id="-34" name="Pick by evaluate" sid="534403736009568" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">DataRsrc.At(DataRsrc.IndexOf(ItemBg.Name), 1) &lt; Amount</param>
+                            <param id="1" name="Expression">RsrcAmnt.At(RsrcAmnt.IndexOf(ItemBg.Name), 1) &lt; Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="910437461410885" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -1033,7 +1042,7 @@
                         </condition>
                         <condition id="-34" name="Pick by evaluate" sid="639158357677609" type="System">
                             <param id="0" name="Object">ItemBg</param>
-                            <param id="1" name="Expression">DataRsrc.At(DataRsrc.IndexOf(ItemBg.Name), 1) &gt;= Amount</param>
+                            <param id="1" name="Expression">RsrcAmnt.At(RsrcAmnt.IndexOf(ItemBg.Name), 1) &gt;= Amount</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="875013908623440" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -1042,15 +1051,15 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="3" name="Set at XY" sid="995420899918452" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
+                        <action id="3" name="Set at XY" sid="995420899918452" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1) + ItemBg.CurPrice</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Money&quot;), 1) + ItemBg.CurPrice</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="660374658681123" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(ItemBg.Name)</param>
+                        <action id="3" name="Set at XY" sid="660374658681123" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(ItemBg.Name)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(ItemBg.Name), 1) - Amount</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(ItemBg.Name), 1) - Amount</param>
                         </action>
                         <action id="0" name="Call function" sid="926878005699987" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1078,7 +1087,7 @@
                         <condition id="-7" name="Compare instance variable" sid="837633506332131" type="ItemBg">
                             <param id="0" name="Instance variable">CurPrice</param>
                             <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1)</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Money&quot;), 1)</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="577965469909440" type="ItemBg">
                             <param id="0" name="Instance variable">BuySell</param>
@@ -1087,15 +1096,15 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="3" name="Set at XY" sid="383255438422564" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
+                        <action id="3" name="Set at XY" sid="383255438422564" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1) - ItemBg.CurPrice</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Money&quot;), 1) - ItemBg.CurPrice</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="490442578929893" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(ItemBg.Name)</param>
+                        <action id="3" name="Set at XY" sid="490442578929893" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(ItemBg.Name)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(ItemBg.Name), 1) + Amount</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(ItemBg.Name), 1) + Amount</param>
                         </action>
                         <action id="0" name="Call function" sid="220410621210483" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1116,6 +1125,7 @@
         </event-group>
         <event-group description="" sid="440496302901424" title="Farm and Factory">
             <sub-events>
+                <comment>Adding/Removing Workers</comment>
                 <event-block sid="661974790138920">
                     <conditions>
                         <condition id="6" name="On object clicked" sid="404367251786386" type="Mouse">
@@ -1142,8 +1152,8 @@
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">Bldg.MaxAmntWorkers</param>
                                 </condition>
-                                <condition id="1" name="Compare at XY" sid="333870918513117" type="DataRsrc">
-                                    <param id="0" name="X">DataRsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                                <condition id="1" name="Compare at XY" sid="333870918513117" type="RsrcAmnt">
+                                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;IdleWorkers&quot;)</param>
                                     <param id="1" name="Y">1</param>
                                     <param id="2" name="Comparison">4</param>
                                     <param id="3" name="Value">0</param>
@@ -1157,15 +1167,15 @@
                                 <action id="0" name="Set text" sid="899420544653251" type="WorkerCnt">
                                     <param id="0" name="Text">Bldg.WorkersAtStation&amp;&quot;/&quot;&amp;Bldg.MaxAmntWorkers</param>
                                 </action>
-                                <action id="3" name="Set at XY" sid="365529511942375" type="DataRsrc">
-                                    <param id="0" name="X">DataRsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                                <action id="3" name="Set at XY" sid="365529511942375" type="RsrcAmnt">
+                                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;IdleWorkers&quot;)</param>
                                     <param id="1" name="Y">1</param>
-                                    <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;IdleWorkers&quot;), 1) - 1</param>
+                                    <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;IdleWorkers&quot;), 1) - 1</param>
                                 </action>
-                                <action id="3" name="Set at XY" sid="157373812429827" type="DataRsrc">
-                                    <param id="0" name="X">DataRsrc.IndexOf(&quot;OccupiedWorkers&quot;)</param>
+                                <action id="3" name="Set at XY" sid="157373812429827" type="RsrcAmnt">
+                                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;OccupiedWorkers&quot;)</param>
                                     <param id="1" name="Y">1</param>
-                                    <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;OccupiedWorkers&quot;),1) + 1</param>
+                                    <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;OccupiedWorkers&quot;),1) + 1</param>
                                 </action>
                                 <action id="0" name="Call function" sid="760829945221065" type="Function">
                                     <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1207,15 +1217,15 @@
                                 <action id="0" name="Set text" sid="364888914084169" type="WorkerCnt">
                                     <param id="0" name="Text">Bldg.WorkersAtStation&amp;&quot;/&quot;&amp;Bldg.MaxAmntWorkers</param>
                                 </action>
-                                <action id="3" name="Set at XY" sid="138095787139500" type="DataRsrc">
-                                    <param id="0" name="X">DataRsrc.IndexOf(&quot;IdleWorkers&quot;)</param>
+                                <action id="3" name="Set at XY" sid="138095787139500" type="RsrcAmnt">
+                                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;IdleWorkers&quot;)</param>
                                     <param id="1" name="Y">1</param>
-                                    <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;IdleWorkers&quot;), 1) + 1</param>
+                                    <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;IdleWorkers&quot;), 1) + 1</param>
                                 </action>
-                                <action id="3" name="Set at XY" sid="899426846936107" type="DataRsrc">
-                                    <param id="0" name="X">DataRsrc.IndexOf(&quot;OccupiedWorkers&quot;)</param>
+                                <action id="3" name="Set at XY" sid="899426846936107" type="RsrcAmnt">
+                                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;OccupiedWorkers&quot;)</param>
                                     <param id="1" name="Y">1</param>
-                                    <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;OccupiedWorkers&quot;), 1) - 1</param>
+                                    <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;OccupiedWorkers&quot;), 1) - 1</param>
                                 </action>
                                 <action id="0" name="Call function" sid="609620575943957" type="Function">
                                     <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1228,6 +1238,57 @@
                                     <param id="0" name="Seconds">0.1</param>
                                 </action>
                                 <action id="9" name="Set scale" sid="421196771444395" type="AddWorkers">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Add Fuel to Power Factory</comment>
+                <event-block sid="726227718147058">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="227696292748957" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">AddFuel</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="502215752276097">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="675082851190578" type="System">
+                                    <param id="0" name="Object">AddFuel</param>
+                                    <param id="1" name="Expression">AddFuel.AnimationName = &quot;AddWood&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="498299697612612" type="AddFuel">
+                                    <param id="0" name="Scale">1.1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="205774189058509" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="213063645585831" type="AddFuel">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="606533104501968">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="705385986578009" type="System">
+                                    <param id="0" name="Object">AddFuel</param>
+                                    <param id="1" name="Expression">AddFuel.AnimationName = &quot;AddCoal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="249453708327940" type="AddFuel">
+                                    <param id="0" name="Scale">1.1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="839933038790527" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="946015297977728" type="AddFuel">
                                     <param id="0" name="Scale">1</param>
                                 </action>
                             </actions>
@@ -1251,6 +1312,9 @@
                             <param id="0" name="Instance variable">PrdctTimeCnt</param>
                             <param id="1" name="Value">0.5</param>
                         </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="550940506935534" type="Bldg">
+                            <param id="0" name="State">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="676858261633828">
@@ -1260,7 +1324,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-5" name="Set width" sid="698522337381782" type="PrdctBar">
+                                <action disabled="1" id="-5" name="Set width" sid="698522337381782" type="PrdctBar">
                                     <param id="0" name="Width">(Bldg.PrdctTimeCnt/100)*(PrdctBarBg.Width-10)</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="228806020149334" type="ItemPrdctBar">
@@ -1273,7 +1337,7 @@
                                 <condition id="-22" name="Else" sid="350452194882387" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-5" name="Set width" sid="348490849445234" type="PrdctBar">
+                                <action disabled="1" id="-5" name="Set width" sid="348490849445234" type="PrdctBar">
                                     <param id="0" name="Width">0</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="615493787482846" type="ItemPrdctBar">
@@ -1295,10 +1359,10 @@
                                     <param id="0" name="Instance variable">PrdctTimeCnt</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="3" name="Set at XY" sid="547804694567554" type="DataRsrc">
-                                    <param id="0" name="X">DataRsrc.IndexOf(&quot;Textiles&quot;)</param>
+                                <action id="3" name="Set at XY" sid="547804694567554" type="RsrcAmnt">
+                                    <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Textiles&quot;)</param>
                                     <param id="1" name="Y">1</param>
-                                    <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Textiles&quot;), 1) + Bldg.WorkersAtStation</param>
+                                    <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Textiles&quot;), 1) + Bldg.WorkersAtStation</param>
                                 </action>
                                 <action id="0" name="Call function" sid="914903073840861" type="Function">
                                     <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1317,6 +1381,16 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="619106084226499">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="328166569392268" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="134396325751967" type="Bldg">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="143997288194491">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="974363941359761" type="Player">
@@ -1329,7 +1403,7 @@
                         <condition id="-4" name="Trigger once while true" sid="161756647225167" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-5" name="Set width" sid="122418840142155" type="PrdctBar">
+                        <action disabled="1" id="-5" name="Set width" sid="122418840142155" type="PrdctBar">
                             <param id="0" name="Width">0</param>
                         </action>
                         <action id="-5" name="Set width" sid="896228221962876" type="ItemPrdctBar">
@@ -1366,15 +1440,15 @@
                     <actions>
                         <action id="-9" name="Set value" sid="674940592525980" type="System">
                             <param id="0" name="Variable">AmntToPay</param>
-                            <param id="1" name="Value">2*DataRsrc.At(DataRsrc.IndexOf(&quot;Workers&quot;), 1)</param>
+                            <param id="1" name="Value">2*RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Workers&quot;), 1)</param>
                         </action>
                         <action id="-5" name="Set width" sid="357652746888487" type="PrgsBar">
                             <param id="0" name="Width">0</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="818442191370924" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
+                        <action id="3" name="Set at XY" sid="818442191370924" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">DataRsrc.At(DataRsrc.IndexOf(&quot;Money&quot;), 1) - AmntToPay</param>
+                            <param id="2" name="Value">RsrcAmnt.At(RsrcAmnt.IndexOf(&quot;Money&quot;), 1) - AmntToPay</param>
                         </action>
                         <action id="0" name="Call function" sid="553217831787445" type="Function">
                             <param id="0" name="Name">&quot;UpdtRsrcAmnt&quot;</param>
@@ -1415,8 +1489,8 @@
                         <condition id="0" name="On function" sid="109245063849355" type="Function">
                             <param id="0" name="Name">&quot;Lose&quot;</param>
                         </condition>
-                        <condition id="1" name="Compare at XY" sid="620031797708887" type="DataRsrc">
-                            <param id="0" name="X">DataRsrc.IndexOf(&quot;Money&quot;)</param>
+                        <condition id="1" name="Compare at XY" sid="620031797708887" type="RsrcAmnt">
+                            <param id="0" name="X">RsrcAmnt.IndexOf(&quot;Money&quot;)</param>
                             <param id="1" name="Y">1</param>
                             <param id="2" name="Comparison">3</param>
                             <param id="3" name="Value">0</param>

@@ -207,6 +207,11 @@
                     <instance-variable name="PrdcItem" sid="483668429962249" type="string" />
                     <instance-variable name="PrdctTimeCnt" sid="753402117748902" type="number" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="695938561101045">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Market" pingpong="0" repeatcount="0" repeatto="0" sid="969683289147114" speed="0">
                         <frame duration="1" hotspotX="0.501754" hotspotY="1" original-source="C:\Users\mlobo\Documents\GitHub\Industrial-Revolution\Industrial Revolution\Industrial Revolution - Image Files\g1429.png">
@@ -399,7 +404,7 @@
             <object-type global="1" name="DataSort" sid="220999848634603">
                 <plugin id="Dictionary" />
             </object-type>
-            <object-type global="1" name="DataRsrc" sid="621316226555770">
+            <object-type global="1" name="RsrcAmnt" sid="621316226555770">
                 <plugin id="Arr" />
             </object-type>
         </object-folder>
@@ -467,6 +472,30 @@
                     </behavior-type>
                 </behaviors>
                 <texture />
+            </object-type>
+            <object-type name="AddFuel" sid="578770919019435">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="172815490858766">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="AddWood" pingpong="0" repeatcount="0" repeatto="0" sid="837424307587401" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="AddCoal" pingpong="0" repeatcount="0" repeatto="0" sid="487027443326262" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="FuelCnt" sid="985783647383018">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="709621699246096">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
         </object-folder>
         <object-folder name="UI Market">
