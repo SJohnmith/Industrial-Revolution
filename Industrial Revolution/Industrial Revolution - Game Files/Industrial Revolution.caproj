@@ -596,11 +596,13 @@
         <layout>Main Menu.xml</layout>
         <layout>Game.xml</layout>
         <layout>Holder Layout.xml</layout>
+        <layout>Attempt.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Game Event.xml</event-sheet>
         <event-sheet>Holder Event.xml</event-sheet>
         <event-sheet>Main Menu Event.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />
